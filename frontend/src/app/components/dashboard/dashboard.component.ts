@@ -8,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   panelOpenState :any;
+  addFarmersPanel:any;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addfarmers(){
+    this.addFarmersPanel = !this.addFarmersPanel;
+    console.log(this.addFarmersPanel)
   }
 
 }

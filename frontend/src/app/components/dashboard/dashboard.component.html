@@ -1,6 +1,6 @@
 <div>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
       <div class="row" style="margin-top: 0.2rem">
         <div class="col-md-12">
           <mat-accordion>
@@ -13,14 +13,21 @@
                 <mat-panel-title>Farmers</mat-panel-title>
               </mat-expansion-panel-header>
               <p>
-                <button mat-raised-button color="primary" class="panelbtn">
+                <button
+                  type="button"
+                  class="btn btn-warning panelbtn"
+                  (click)="addfarmers()"
+                >
                   Add Farmers
                 </button>
               </p>
               <p>
-                <button mat-raised-button color="primary" class="panelbtn">
+                <button type="button" class="btn btn-info panelbtn">
                   Farmers List
                 </button>
+                <!-- <button mat-raised-button color="primary" class="panelbtn">
+                  Farmers List
+                </button> -->
               </p>
             </mat-expansion-panel>
           </mat-accordion>
@@ -38,7 +45,7 @@
                 <mat-panel-title>Farmers</mat-panel-title>
               </mat-expansion-panel-header>
               <p>
-                <button mat-raised-button color="primary" class="panelbtn">
+                <button type="button" class="btn btn-primary panelbtn">
                   Primary
                 </button>
               </p>
@@ -58,7 +65,7 @@
                 <mat-panel-title>Farmers</mat-panel-title>
               </mat-expansion-panel-header>
               <p>
-                <button mat-raised-button color="primary" class="panelbtn">
+                <button type="button" class="btn btn-primary panelbtn">
                   Primary
                 </button>
               </p>
@@ -78,7 +85,7 @@
                 <mat-panel-title>Farmers</mat-panel-title>
               </mat-expansion-panel-header>
               <p>
-                <button mat-raised-button color="primary" class="panelbtn">
+                <button type="button" class="btn btn-primary panelbtn">
                   Primary
                 </button>
               </p>
@@ -98,7 +105,7 @@
                 <mat-panel-title>Farmers</mat-panel-title>
               </mat-expansion-panel-header>
               <p>
-                <button mat-raised-button color="primary" class="panelbtn">
+                <button type="button" class="btn btn-primary panelbtn">
                   Primary
                 </button>
               </p>
@@ -108,10 +115,12 @@
       </div>
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-10">
       <div class="row" style="margin-top: 0.2rem">
         <div class="col-md-12">
-          <p>sindisndinsdnsidsn</p>
+          <div *ngIf="addFarmersPanel">
+            <app-addfarmers></app-addfarmers>
+          </div>
         </div>
       </div>
     </div>
