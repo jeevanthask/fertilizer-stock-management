@@ -12,3 +12,5 @@ let farmers = new Schema({
     type: String,
   },
 });
+
+module.exports = mongoose.model("Farmers", Farmers);
