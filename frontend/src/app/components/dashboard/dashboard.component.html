@@ -22,7 +22,11 @@
                 </button>
               </p>
               <p>
-                <button type="button" class="btn btn-info panelbtn">
+                <button
+                  type="button"
+                  class="btn btn-info panelbtn"
+                  (click)="showFarmers()"
+                >
                   Farmers List
                 </button>
                 <!-- <button mat-raised-button color="primary" class="panelbtn">
@@ -120,6 +124,9 @@
         <div class="col-md-12">
           <div *ngIf="addFarmersPanel">
             <app-addfarmers></app-addfarmers>
+          </div>
+          <div *ngIf="showFarmersList">
+            <app-farmerslist></app-farmerslist>
           </div>
         </div>
       </div>

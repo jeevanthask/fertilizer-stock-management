@@ -11,6 +11,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddfarmersComponent } from './components/addfarmers/addfarmers.component';
+import { FarmerslistComponent } from './components/farmerslist/farmerslist.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AddfarmersComponent } from './components/addfarmers/addfarmers.componen
     LoginComponent,
     DashboardComponent,
     NavbarComponent,
-    AddfarmersComponent
+    AddfarmersComponent,
+    FarmerslistComponent
   ],
   imports: [
     BrowserModule,

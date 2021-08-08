@@ -3,21 +3,28 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  panelOpenState: any;
+  addFarmersPanel: any;
+  showFarmersList: any;
 
-  panelOpenState :any;
-  addFarmersPanel:any;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  addfarmers() {
+    this.addFarmersPanel = true;
+    this.showFarmersList = false;
+    console.log(this.addFarmersPanel);
+    console.log(this.showFarmersList);
   }
 
-  addfarmers(){
-    this.addFarmersPanel = !this.addFarmersPanel;
-    console.log(this.addFarmersPanel)
+  showFarmers() {
+    this.showFarmersList = true;
+    this.addFarmersPanel = false;
+    console.log(this.showFarmersList);
+    console.log(this.addFarmersPanel);
   }
-
 }
