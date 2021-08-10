@@ -8,7 +8,7 @@ let Farmer = require("../models/farmers.model");
 
 app.use(cors());
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 router.route("/addfarmer").post(function (req, res) {
