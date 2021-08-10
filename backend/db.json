@@ -1,19 +1,10 @@
 {
-  "posts": [
+  "farmers": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "firstname": "Sebastian",
+      "lastname": "Eschweiler",
+      "address": "beliatta"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
