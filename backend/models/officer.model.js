@@ -5,7 +5,7 @@ let Officers = new Schema({
   firstname: {
     type: String,
   },
-  lastname: {
+  secondname: {
     type: String,
   },
   position: {
