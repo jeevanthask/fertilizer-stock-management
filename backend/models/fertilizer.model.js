@@ -1,8 +1,14 @@
-let Fertilizer = new Schema({
-  firstname: {
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+let Fertilizers = new Schema({
+  name: {
     type: String,
   },
-  secondname: {
+  companyname: {
+    type: String,
+  },
+  type: {
     type: String,
   },
 });

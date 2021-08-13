@@ -20,4 +20,6 @@ connection.once("open", function () {
 app.use("/Dashboard/admin", require("./routes/signupfarmers.router"));
 app.use("/Dashboard/admin", require("./routes/getfarmers.router"));
 
+app.use("/Dashboard/admin", require("./routes/addfertilizer.router"));
+
 app.listen(PORT, () => console.log(`app is listening in port ${PORT} ...`));
