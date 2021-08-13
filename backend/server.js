@@ -21,5 +21,6 @@ app.use("/Dashboard/admin", require("./routes/signupfarmers.router"));
 app.use("/Dashboard/admin", require("./routes/getfarmers.router"));
 
 app.use("/Dashboard/admin", require("./routes/addfertilizer.router"));
+app.use("/Dashboard/admin", require("./routes/getfertilizers.router"));
 
 app.listen(PORT, () => console.log(`app is listening in port ${PORT} ...`));
