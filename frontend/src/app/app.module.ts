@@ -24,6 +24,9 @@ import {ChartModule} from 'primeng/chart';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import { Chart01Component } from './components/chart01/chart01.component';
+import { Chart02Component } from './components/chart02/chart02.component';
+import { Chart03Component } from './components/chart03/chart03.component';
+import { Chart04Component } from './components/chart04/chart04.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { Chart01Component } from './components/chart01/chart01.component';
     AddsellingcompanyComponent,
     SellingcompanieslistComponent,
     NavbarComponent,
-    Chart01Component
+    Chart01Component,
+    Chart02Component,
+    Chart03Component,
+    Chart04Component
   ],
   imports: [
     BrowserModule,
