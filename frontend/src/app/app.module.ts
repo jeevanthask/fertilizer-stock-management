@@ -18,6 +18,8 @@ import {SellingcompanieslistComponent} from './components/sellingcompanieslist/s
 import {AccordionModule} from 'primeng/accordion';
 import {SidebarModule} from 'primeng/sidebar';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import {SidebarModule} from 'primeng/sidebar';
     ButtonModule,
     ReactiveFormsModule,
     AccordionModule,
-    SidebarModule
+    SidebarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
