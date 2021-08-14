@@ -13,29 +13,117 @@ export class DashboardComponent implements OnInit {
   constructor() {
   }
 
-  clickItem1() {
-    alert('clicked item 1')
+  clickAddFarmer() {
+    alert('clickAddFarmer')
   }
 
-  clickItem2() {
-    alert('clicked item 2')
+  clickFarmersList() {
+    alert('clickFarmersList')
+  }
+
+  clickAddOfficer() {
+    alert('clickAddOfficer')
+  }
+
+  clickOfficersList() {
+    alert('clickOfficersList')
+  }
+
+  clickAddFertilizer() {
+    alert('clickAddFertilizer')
+  }
+
+  clickFertilizersList() {
+    alert('clickFertilizersList')
+  }
+
+  clickAddCompany() {
+    alert('clickAddCompany')
+  }
+
+  clickCompaniesList() {
+    alert('clickCompaniesList')
   }
 
   ngOnInit(): void {
     this.items = [
       {
-        label: 'File',
+        label: 'Farmers',
         icon: 'pi pi-fw pi-file',
         items: [
           {
-            label: 'Delete' ,
+            label: 'Add Farmer',
             icon: 'pi pi-fw pi-trash',
-            command: () => { this.clickItem1(); }
+            command: () => {
+              this.clickAddFarmer();
+            }
           },
           {
-            label: 'Export',
+            label: 'Farmers List',
             icon: 'pi pi-fw pi-external-link',
-            command: () => { this.clickItem2(); }
+            command: () => {
+              this.clickFarmersList();
+            }
+          }
+        ]
+      },
+      {
+        label: 'Officers',
+        icon: 'pi pi-fw pi-file',
+        items: [
+          {
+            label: 'Add Officer',
+            icon: 'pi pi-fw pi-trash',
+            command: () => {
+              this.clickAddOfficer();
+            }
+          },
+          {
+            label: 'Officers List',
+            icon: 'pi pi-fw pi-external-link',
+            command: () => {
+              this.clickOfficersList();
+            }
+          }
+        ]
+      },
+      {
+        label: 'Fertilizers',
+        icon: 'pi pi-fw pi-file',
+        items: [
+          {
+            label: 'Add Fertilizer',
+            icon: 'pi pi-fw pi-trash',
+            command: () => {
+              this.clickAddFertilizer();
+            }
+          },
+          {
+            label: 'Fertilizer List',
+            icon: 'pi pi-fw pi-external-link',
+            command: () => {
+              this.clickFertilizersList();
+            }
+          }
+        ]
+      },
+      {
+        label: 'Companies',
+        icon: 'pi pi-fw pi-file',
+        items: [
+          {
+            label: 'Add Company',
+            icon: 'pi pi-fw pi-trash',
+            command: () => {
+              this.clickAddCompany();
+            }
+          },
+          {
+            label: 'Company List',
+            icon: 'pi pi-fw pi-external-link',
+            command: () => {
+              this.clickCompaniesList();
+            }
           }
         ]
       }
