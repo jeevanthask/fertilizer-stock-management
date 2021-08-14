@@ -7,6 +7,7 @@ import {AddfarmersComponent} from './components/addfarmers/addfarmers.component'
 
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -15,11 +16,12 @@ import {ButtonModule} from 'primeng/button';
     DashboardComponent,
     AddfarmersComponent
   ],
-  imports: [
-    BrowserModule,
-    InputTextModule,
-    ButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        InputTextModule,
+        ButtonModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
