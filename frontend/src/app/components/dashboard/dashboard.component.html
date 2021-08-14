@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <p-accordion>
         <p-accordionTab header="Header I" [selected]="true">
           <button pButton type="button" label="Submit" class="p-button-help">
@@ -10,17 +10,17 @@
           <button pButton type="button" label="Submit" class="p-button-help">
           </button>
         </p-accordionTab>
-        <p-accordionTab header="Header III">
-          <button pButton type="button" label="Submit" class="p-button-help">
-          </button>
-        </p-accordionTab>
       </p-accordion>
+
+      <p-panelMenu [model]="items" [style]="{'width':'300px'}"></p-panelMenu>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-9">
       sscsc
     </div>
   </div>
 </div>
+
+
 
 

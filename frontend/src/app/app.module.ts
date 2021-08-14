@@ -17,8 +17,11 @@ import {AddsellingcompanyComponent} from './components/addsellingcompany/addsell
 import {SellingcompanieslistComponent} from './components/sellingcompanieslist/sellingcompanieslist.component';
 import {AccordionModule} from 'primeng/accordion';
 import {SidebarModule} from 'primeng/sidebar';
+import {PanelMenuModule} from 'primeng/panelmenu';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NavbarComponent} from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddofficersComponent,
     OfficerslistComponent,
     AddsellingcompanyComponent,
-    SellingcompanieslistComponent
+    SellingcompanieslistComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     AccordionModule,
     SidebarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PanelMenuModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
