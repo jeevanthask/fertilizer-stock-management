@@ -7,12 +7,19 @@ import {MenuItem} from 'primeng/api';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  display: any;
+
   items: MenuItem[] = [];
 
   constructor() {
   }
 
+  clickItem1() {
+    alert('clicked item 1')
+  }
+
+  clickItem2() {
+    alert('clicked item 2')
+  }
 
   ngOnInit(): void {
     this.items = [
@@ -22,15 +29,18 @@ export class DashboardComponent implements OnInit {
         items: [
           {
             label: 'Delete' ,
-            icon: 'pi pi-fw pi-trash'
+            icon: 'pi pi-fw pi-trash',
+            command: () => { this.clickItem1(); }
           },
           {
             label: 'Export',
-            icon: 'pi pi-fw pi-external-link'
+            icon: 'pi pi-fw pi-external-link',
+            command: () => { this.clickItem2(); }
           }
         ]
       }
     ]
   }
+
 
 }
