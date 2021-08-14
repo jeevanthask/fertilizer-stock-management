@@ -18,10 +18,12 @@ import {SellingcompanieslistComponent} from './components/sellingcompanieslist/s
 import {AccordionModule} from 'primeng/accordion';
 import {SidebarModule} from 'primeng/sidebar';
 import {PanelMenuModule} from 'primeng/panelmenu';
+import {ChartModule} from 'primeng/chart';
 
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import { Chart01Component } from './components/chart01/chart01.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     OfficerslistComponent,
     AddsellingcompanyComponent,
     SellingcompanieslistComponent,
-    NavbarComponent
+    NavbarComponent,
+    Chart01Component
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,7 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     SidebarModule,
     BrowserAnimationsModule,
     PanelMenuModule,
-
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
