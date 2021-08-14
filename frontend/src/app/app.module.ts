@@ -19,14 +19,16 @@ import {AccordionModule} from 'primeng/accordion';
 import {SidebarModule} from 'primeng/sidebar';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {ChartModule} from 'primeng/chart';
+import {ScrollTopModule} from 'primeng/scrolltop';
 
+import {MenubarModule} from 'primeng/menubar';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import { Chart01Component } from './components/chart01/chart01.component';
-import { Chart02Component } from './components/chart02/chart02.component';
-import { Chart03Component } from './components/chart03/chart03.component';
-import { Chart04Component } from './components/chart04/chart04.component';
+import {Chart01Component} from './components/chart01/chart01.component';
+import {Chart02Component} from './components/chart02/chart02.component';
+import {Chart03Component} from './components/chart03/chart03.component';
+import {Chart04Component} from './components/chart04/chart04.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,10 @@ import { Chart04Component } from './components/chart04/chart04.component';
     SidebarModule,
     BrowserAnimationsModule,
     PanelMenuModule,
-    ChartModule
+    ChartModule,
+    ScrollTopModule,
+    MenubarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
