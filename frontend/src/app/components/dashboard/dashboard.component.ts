@@ -49,18 +49,18 @@ export class DashboardComponent implements OnInit {
     this.items = [
       {
         label: 'Farmers',
-        icon: 'pi pi-fw pi-file',
+        // icon: 'pi pi-plus-circle',
         items: [
           {
             label: 'Add Farmer',
-            icon: 'pi pi-fw pi-trash',
+            icon: 'pi pi-plus-circle',
             command: () => {
               this.clickAddFarmer();
             }
           },
           {
             label: 'Farmers List',
-            icon: 'pi pi-fw pi-external-link',
+            icon: 'pi pi-th-large',
             command: () => {
               this.clickFarmersList();
             }
@@ -69,18 +69,18 @@ export class DashboardComponent implements OnInit {
       },
       {
         label: 'Officers',
-        icon: 'pi pi-fw pi-file',
+        //  icon: 'pi pi-plus-circle',
         items: [
           {
             label: 'Add Officer',
-            icon: 'pi pi-fw pi-trash',
+            icon: 'pi pi-plus-circle',
             command: () => {
               this.clickAddOfficer();
             }
           },
           {
             label: 'Officers List',
-            icon: 'pi pi-fw pi-external-link',
+            icon: 'pi pi-th-large',
             command: () => {
               this.clickOfficersList();
             }
@@ -89,18 +89,18 @@ export class DashboardComponent implements OnInit {
       },
       {
         label: 'Fertilizers',
-        icon: 'pi pi-fw pi-file',
+        //  icon: 'pi pi-plus-circle',
         items: [
           {
             label: 'Add Fertilizer',
-            icon: 'pi pi-fw pi-trash',
+            icon: 'pi pi-plus-circle',
             command: () => {
               this.clickAddFertilizer();
             }
           },
           {
             label: 'Fertilizer List',
-            icon: 'pi pi-fw pi-external-link',
+            icon: 'pi pi-th-large',
             command: () => {
               this.clickFertilizersList();
             }
@@ -109,18 +109,18 @@ export class DashboardComponent implements OnInit {
       },
       {
         label: 'Companies',
-        icon: 'pi pi-fw pi-file',
+        //  icon: 'pi pi-plus-circle',
         items: [
           {
             label: 'Add Company',
-            icon: 'pi pi-fw pi-trash',
+            icon: 'pi pi-plus-circle',
             command: () => {
               this.clickAddCompany();
             }
           },
           {
             label: 'Company List',
-            icon: 'pi pi-fw pi-external-link',
+            icon: 'pi pi-th-large',
             command: () => {
               this.clickCompaniesList();
             }
