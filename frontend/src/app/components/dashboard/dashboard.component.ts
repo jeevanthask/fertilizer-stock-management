@@ -9,14 +9,14 @@ import {MenuItem} from 'primeng/api';
 export class DashboardComponent implements OnInit {
 
   items: MenuItem[] = [];
-  isAddFarmerClicked:any
-  isFarmersListClicked:any
-  isPanelClicked:any
+  isAddFarmerClicked: any
+  isFarmersListClicked: any
+  isPanelClicked: any
 
   constructor() {
   }
 
-  clickShowGraphs(){
+  clickShowGraphs() {
     this.isPanelClicked = 'showGraphs'
   }
 
@@ -29,27 +29,27 @@ export class DashboardComponent implements OnInit {
   }
 
   clickAddOfficer() {
-    alert('clickAddOfficer')
+    this.isPanelClicked = 'addOfficer'
   }
 
   clickOfficersList() {
-    alert('clickOfficersList')
+    this.isPanelClicked = 'officersList'
   }
 
   clickAddFertilizer() {
-    alert('clickAddFertilizer')
+    this.isPanelClicked = 'addFertilizer'
   }
 
   clickFertilizersList() {
-    alert('clickFertilizersList')
+    this.isPanelClicked = 'fertilizersList'
   }
 
   clickAddCompany() {
-    alert('clickAddCompany')
+    this.isPanelClicked = 'addCompany'
   }
 
   clickCompaniesList() {
-    alert('clickCompaniesList')
+    this.isPanelClicked = 'companiesList'
   }
 
   ngOnInit(): void {
