@@ -15,6 +15,12 @@
         <div *ngIf="isPanelClicked == 'addFarmer'; then addFarmerBlock"></div>
         <div *ngIf="isPanelClicked == 'farmersList'; then farmersListBlock"></div>
         <div *ngIf="isPanelClicked == 'showGraphs'; then showGraphsBlock"></div>
+        <div *ngIf="isPanelClicked == 'addOfficer'; then addOfficerBlock"></div>
+        <div *ngIf="isPanelClicked == 'officersList'; then officersListBlock"></div>
+        <div *ngIf="isPanelClicked == 'addFertilizer'; then addFertilizerBlock"></div>
+        <div *ngIf="isPanelClicked == 'fertilizersList'; then fertilizersListBlock"></div>
+        <div *ngIf="isPanelClicked == 'addCompany'; then addCompanyBlock"></div>
+        <div *ngIf="isPanelClicked == 'companiesList'; then companiesListBlock"></div>
 
 
         <div class="col-md-12">
@@ -25,6 +31,30 @@
 
           <ng-template #farmersListBlock>
             <app-farmerslist></app-farmerslist>
+          </ng-template>
+
+          <ng-template #addOfficerBlock>
+            <app-addofficers></app-addofficers>
+          </ng-template>
+
+          <ng-template #officersListBlock>
+            <app-officerslist></app-officerslist>
+          </ng-template>
+
+          <ng-template #addFertilizerBlock>
+            <app-addfertilizers></app-addfertilizers>
+          </ng-template>
+
+          <ng-template #fertilizersListBlock>
+            <app-fertilizerslist></app-fertilizerslist>
+          </ng-template>
+
+          <ng-template #addCompanyBlock>
+            <app-addsellingcompany></app-addsellingcompany>
+          </ng-template>
+
+          <ng-template #companiesListBlock>
+            <app-sellingcompanieslist></app-sellingcompanieslist>
           </ng-template>
 
           <ng-template #showGraphsBlock>
