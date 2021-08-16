@@ -60,7 +60,7 @@ export class DashboardComponent implements OnInit {
         items: [
           {
             label: 'Show Graphs',
-            icon: 'pi pi-plus-circle',
+            icon: 'pi pi-cog',
             command: () => {
               this.clickShowGraphs();
             }

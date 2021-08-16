@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {FarmerService} from "../../services/farmer.service";
 
 @Component({
   selector: 'app-addfarmers',
@@ -11,7 +12,7 @@ export class AddfarmersComponent implements OnInit {
 
   createForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private farmerService: FarmerService, private fb: FormBuilder) {
     this.createForm = this.fb.group({
       firstname: ['', Validators.required],
       secondname: '',
@@ -25,11 +26,16 @@ export class AddfarmersComponent implements OnInit {
     console.log(secondname)
     console.log(address)
 
+    this.farmerService.addFarmer(firstname, secondname, address).subscribe(() => {
+      alert("The book added successfully!!")
+    });
+
     this.createForm = this.fb.group({
       firstname: ['', Validators.required],
       secondname: '',
       address: ''
     })
+
   };
 
   ngOnInit(): void {

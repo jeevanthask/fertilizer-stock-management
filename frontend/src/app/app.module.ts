@@ -22,6 +22,8 @@ import {ChartModule} from 'primeng/chart';
 import {ScrollTopModule} from 'primeng/scrolltop';
 
 import {MenubarModule} from 'primeng/menubar';
+import {CardModule} from 'primeng/card';
+import {ToolbarModule} from 'primeng/toolbar';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavbarComponent} from './components/navbar/navbar.component';
@@ -29,6 +31,8 @@ import {Chart01Component} from './components/chart01/chart01.component';
 import {Chart02Component} from './components/chart02/chart02.component';
 import {Chart03Component} from './components/chart03/chart03.component';
 import {Chart04Component} from './components/chart04/chart04.component';
+import {FarmerService} from "./services/farmer.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -59,10 +63,13 @@ import {Chart04Component} from './components/chart04/chart04.component';
     PanelMenuModule,
     ChartModule,
     ScrollTopModule,
-    MenubarModule
+    MenubarModule,
+    CardModule,
+    ToolbarModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [FarmerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
