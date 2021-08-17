@@ -5,13 +5,19 @@
       <input type="text" pInputText required #pname/>
     </div>
     <div class="mb-3">
-      <label class="form-label">Company Name</label><br>
-      <input type="text" pInputText required #comname/>
+      <p-dropdown [options]="groupedCompanies" placeholder="Select a Company" [group]="true" #comname>
+        <ng-template let-group pTemplate="group">
+          <div class="p-d-flex p-ai-center">
+            <span>{{group.label}}</span>
+          </div>
+        </ng-template>
+      </p-dropdown>
     </div>
     <div class="mb-3">
-      <label class="form-label">Type</label><br>
-      <input type="text" pInputText required #protype/>
+      <p-dropdown [options]="cities" placeholder="Select the Type" optionLabel="name"
+                  [showClear]="true" #protype></p-dropdown>
     </div>
+
 
     <button pButton type="submit" label="Submit" class="p-button-help"
             (click)="addFertilizer(pname.value,comname.value,protype.value)">
