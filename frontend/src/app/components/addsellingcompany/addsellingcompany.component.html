@@ -1,1 +1,30 @@
-<p>addsellingcompany works!</p>
+<div class="container p-5">
+  <form [formGroup]="createForm" class="create-form">
+    <div class="mb-3">
+      <label class="form-label">First Name</label><br>
+      <input type="text" pInputText required #firstname/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Second Name</label><br>
+      <input type="text" pInputText required #secondname/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label><br>
+      <input type="text" pInputText required #email/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Telephone</label><br>
+      <input type="text" pInputText required #telephone/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Address</label><br>
+      <input type="text" pInputText required #address/>
+    </div>
+
+
+    <button pButton type="submit" label="Submit" class="p-button-help"
+            (click)="addCompany(firstname.value,secondname.value,email.value,telephone.value,address.value)">
+    </button>
+  </form>
+</div>
+
