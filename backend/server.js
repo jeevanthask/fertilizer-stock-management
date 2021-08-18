@@ -9,12 +9,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 mongoose.connect("mongodb://127.0.0.1:27017/FertilizerDB", {
-  useNewUrlParser: true,
+    useNewUrlParser: true,
 });
 const connection = mongoose.connection;
 
 connection.once("open", function () {
-  console.log("mongodb connection established successfully");
+    console.log("mongodb connection established successfully");
 });
 
 app.use("/Dashboard/admin", require("./routes/signupfarmers.router"));
@@ -25,5 +25,7 @@ app.use("/Dashboard/admin", require("./routes/getfertilizers.router"));
 
 app.use("/Dashboard/admin", require("./routes/addofficer.router"));
 app.use("/Dashboard/admin", require("./routes/getofficers.router"));
+
+app.use("/Dashboard/admin", require("./routes/addcompany.router"));
 
 app.listen(PORT, () => console.log(`app is listening in port ${PORT} ...`));
