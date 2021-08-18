@@ -4,7 +4,7 @@ import {FertilizerService} from "../../services/fertilizer.service";
 import {SelectItem, SelectItemGroup} from "primeng/api";
 
 
-interface City {
+interface FertilizerType {
   name: string,
   code: string
 }
@@ -22,7 +22,7 @@ export class AddfertilizersComponent implements OnInit {
   createForm: FormGroup;
 
   groupedCompanies: SelectItemGroup[];
-  cities: City[];
+  fertilizerTypes: FertilizerType[];
 
   constructor(private fertilizerService: FertilizerService, private fb: FormBuilder) {
 
@@ -32,12 +32,9 @@ export class AddfertilizersComponent implements OnInit {
       protype: ''
     });
 
-    this.cities = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
+    this.fertilizerTypes = [
+      {name: 'Organic', code: 'NY'},
+      {name: 'Inorganic', code: 'RM'}
     ];
 
     this.groupedCompanies = [
@@ -67,9 +64,9 @@ export class AddfertilizersComponent implements OnInit {
 
     console.log(pname)
     console.log(comname)
-    console.log(protype)
+    console.log(protype.name)
 
-    this.fertilizerService.addFertilizer(pname, comname, protype).subscribe(() => {
+    this.fertilizerService.addFertilizer(pname, comname, protype.name).subscribe(() => {
       alert("The fertilizer added successfully!!")
     });
 
