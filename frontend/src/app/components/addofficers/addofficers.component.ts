@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {OfficerService} from "../../services/officer.service";
+
+interface OfficerType {
+  name: string,
+  code: string
+}
 
 @Component({
   selector: 'app-addofficers',
@@ -7,7 +14,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddofficersComponent implements OnInit {
 
-  constructor() { }
+  createForm: FormGroup;
+  officerTypes: OfficerType[];
+
+  constructor(private officerService: OfficerService, private fb: FormBuilder) {
+    this.createForm = this.fb.group({
+      firstname: ['', Validators.required],
+      secondname: '',
+      position: ''
+    });
+
+    this.officerTypes = [
+      {name: 'officertype01', code: 'NY'},
+      {name: 'officertype02', code: 'RM'},
+      {name: 'officertype03', code: 'EE'}
+    ];
+  }
+
+  addOfficer(firstname: any, secondname: any, position: any) {
+
+    console.log(firstname)
+    console.log(secondname)
+    console.log(position)
+
+    this.officerService.addOfficer(firstname, secondname, position.name).subscribe(() => {
+      alert("The officer added successfully!!")
+    });
+
+    this.createForm = this.fb.group({
+      firstname: ['', Validators.required],
+      secondname: '',
+      position: ''
+    })
+
+  };
 
   ngOnInit(): void {
   }
