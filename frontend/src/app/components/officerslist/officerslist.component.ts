@@ -12,10 +12,10 @@ export class OfficerslistComponent implements OnInit {
   constructor(private officerService: OfficerService) {}
 
   ngOnInit() {
-    this.fetchFarmers();
+    this.fetchOfficers();
   }
 
-  fetchFarmers() {
+  fetchOfficers() {
     this.officerService.getOfficers().subscribe((data) => {
       this.officers = data;
       console.log(this.officers);
