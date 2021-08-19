@@ -34,6 +34,7 @@ import {Chart04Component} from './components/chart04/chart04.component';
 import {FarmerService} from "./services/farmer.service";
 import {HttpClientModule} from "@angular/common/http";
 import {DropdownModule} from 'primeng/dropdown';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import {DropdownModule} from 'primeng/dropdown';
     CardModule,
     ToolbarModule,
     HttpClientModule,
-    DropdownModule
+    DropdownModule,
+    TableModule
 
   ],
   providers: [FarmerService],

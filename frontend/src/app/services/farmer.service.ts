@@ -20,4 +20,12 @@ export class FarmerService {
     return this.http.post(`${this.uri}/Dashboard/admin/addfarmer`, farmer)
   }
 
+  getFarmers() {
+    return this.http.get(`${this.uri}/Dashboard/admin/getfarmers`)
+  }
+
+  getFarmerById(id: any) {
+    return this.http.get(`${this.uri}/Dashboard/admin/getfarmer/${id}`)
+  }
+
 }
