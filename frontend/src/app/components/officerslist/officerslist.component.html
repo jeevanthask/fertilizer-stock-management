@@ -1,1 +1,40 @@
-<p>officerslist works!</p>
+<p-table
+  [value]="officers"
+  styleClass="p-datatable-striped"
+  [paginator]="true"
+  [rows]="5"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  [rowsPerPageOptions]="[5, 10, 15]"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>First Name</th>
+      <th>Second Name</th>
+      <th>Position</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-officer>
+    <tr>
+      <td>{{ officer.firstname }}</td>
+      <td>{{ officer.secondname }}</td>
+      <td>{{ officer.position }}</td>
+      <td>
+        <button
+          pButton
+          pRipple
+          type="button"
+          icon="pi pi-cog"
+          class="p-button-rounded p-button-secondary"
+        ></button>
+        <button
+          pButton
+          pRipple
+          type="button"
+          icon="pi pi-trash"
+          class="p-button-rounded p-button-danger"
+        ></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
