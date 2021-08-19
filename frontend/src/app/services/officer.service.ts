@@ -1,22 +1,28 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OfficerService {
+  uri = 'http://localhost:4000';
 
-  uri = "http://localhost:4000"
-
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   addOfficer(firstname: any, secondname: any, position: any) {
     const officer = {
       firstname: firstname,
       secondname: secondname,
-      position: position
+      position: position,
     };
-    return this.http.post(`${this.uri}/Dashboard/admin/addofficer`, officer)
+    return this.http.post(`${this.uri}/Dashboard/admin/addofficer`, officer);
+  }
+
+  getOfficers() {
+    return this.http.get(`${this.uri}/Dashboard/admin/getofficers`);
+  }
+
+  getOfficerById(id: any) {
+    return this.http.get(`${this.uri}/Dashboard/admin/getofficer/${id}`);
   }
 }

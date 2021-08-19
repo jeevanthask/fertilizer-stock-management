@@ -1,5 +1,12 @@
-<p-table [value]="farmers" styleClass="p-datatable-striped" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
-         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[5,10,15]">
+<p-table
+  [value]="farmers"
+  styleClass="p-datatable-striped"
+  [paginator]="true"
+  [rows]="5"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  [rowsPerPageOptions]="[5, 10, 15]"
+>
   <ng-template pTemplate="header">
     <tr>
       <th>First Name</th>
@@ -10,13 +17,24 @@
   </ng-template>
   <ng-template pTemplate="body" let-product>
     <tr>
-      <td>{{product.firstname}}</td>
-      <td>{{product.secondname}}</td>
-      <td>{{product.address}}</td>
+      <td>{{ product.firstname }}</td>
+      <td>{{ product.secondname }}</td>
+      <td>{{ product.address }}</td>
       <td>
-        <button pButton pRipple type="button" icon="pi pi-cog"
-                class="p-button-rounded p-button-secondary"></button>
-        <button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger"></button>
+        <button
+          pButton
+          pRipple
+          type="button"
+          icon="pi pi-cog"
+          class="p-button-rounded p-button-secondary"
+        ></button>
+        <button
+          pButton
+          pRipple
+          type="button"
+          icon="pi pi-trash"
+          class="p-button-rounded p-button-danger"
+        ></button>
       </td>
     </tr>
   </ng-template>
