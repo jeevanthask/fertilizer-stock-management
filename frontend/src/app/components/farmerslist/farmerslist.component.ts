@@ -21,4 +21,10 @@ export class FarmerslistComponent implements OnInit {
       console.log(this.farmers);
     });
   }
+
+  deleteFarmer(id: any) {
+    this.farmerService.deleteFarmer(id).subscribe(() => {
+      this.fetchFarmers();
+    });
+  }
 }
