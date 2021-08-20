@@ -1,24 +1,36 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CompanyService {
+  uri = 'http://localhost:4000';
 
-  uri = "http://localhost:4000"
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) {
-  }
-
-  addCompany(firstname: any, secondname: any, email: any, telephone: any, address: any) {
+  addCompany(
+    firstname: any,
+    secondname: any,
+    email: any,
+    telephone: any,
+    address: any
+  ) {
     const company = {
       firstname: firstname,
       secondname: secondname,
       email: email,
       telephone: telephone,
-      address: address
+      address: address,
     };
-    return this.http.post(`${this.uri}/Dashboard/admin/addcompany`, company)
+    return this.http.post(`${this.uri}/Dashboard/admin/addcompany`, company);
+  }
+
+  getCompanies() {
+    return this.http.get(`${this.uri}/Dashboard/admin/getcompanies`);
+  }
+
+  getCompanyById(id: any) {
+    return this.http.get(`${this.uri}/Dashboard/admin/getcompany/${id}`);
   }
 }
