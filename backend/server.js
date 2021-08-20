@@ -31,5 +31,6 @@ app.use("/Dashboard/admin", require("./routes/deleteofficer.router"));
 
 app.use("/Dashboard/admin", require("./routes/addcompany.router"));
 app.use("/Dashboard/admin", require("./routes/getcompanies.router"));
+app.use("/Dashboard/admin", require("./routes/deletecompany.router"));
 
 app.listen(PORT, () => console.log(`app is listening in port ${PORT} ...`));
