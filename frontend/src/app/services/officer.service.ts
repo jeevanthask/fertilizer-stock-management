@@ -25,4 +25,8 @@ export class OfficerService {
   getOfficerById(id: any) {
     return this.http.get(`${this.uri}/Dashboard/admin/getofficer/${id}`);
   }
+
+  deleteOfficer(id: any) {
+    return this.http.delete(`${this.uri}/Dashboard/admin/deleteofficer/${id}`);
+  }
 }

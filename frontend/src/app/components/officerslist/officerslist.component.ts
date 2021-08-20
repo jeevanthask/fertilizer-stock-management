@@ -21,4 +21,10 @@ export class OfficerslistComponent implements OnInit {
       console.log(this.officers);
     });
   }
+
+  deleteOfficer(id: any) {
+    this.officerService.deleteOfficer(id).subscribe(() => {
+      this.fetchOfficers();
+    });
+  }
 }
