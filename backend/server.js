@@ -26,6 +26,7 @@ app.use("/Dashboard/admin", require("./routes/getfertilizers.router"));
 
 app.use("/Dashboard/admin", require("./routes/addofficer.router"));
 app.use("/Dashboard/admin", require("./routes/getofficers.router"));
+app.use("/Dashboard/admin", require("./routes/deleteofficer.router"));
 
 app.use("/Dashboard/admin", require("./routes/addcompany.router"));
 app.use("/Dashboard/admin", require("./routes/getcompanies.router"));
