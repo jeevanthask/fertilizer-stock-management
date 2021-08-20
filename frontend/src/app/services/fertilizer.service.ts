@@ -28,4 +28,10 @@ export class FertilizerService {
   getFertilizerById(id: any) {
     return this.http.get(`${this.uri}/Dashboard/admin/getfertilizer/${id}`);
   }
+
+  deleteFertilizer(id: any) {
+    return this.http.delete(
+      `${this.uri}/Dashboard/admin/deletefertilizer/${id}`
+    );
+  }
 }

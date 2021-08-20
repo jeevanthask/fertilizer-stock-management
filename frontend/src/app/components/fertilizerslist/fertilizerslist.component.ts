@@ -21,4 +21,10 @@ export class FertilizerslistComponent implements OnInit {
       console.log(this.fertilizers);
     });
   }
+
+  deleteFertilizer(id: any) {
+    this.ferilizerService.deleteFertilizer(id).subscribe(() => {
+      this.fetchFertilizers();
+    });
+  }
 }
