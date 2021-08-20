@@ -33,4 +33,8 @@ export class CompanyService {
   getCompanyById(id: any) {
     return this.http.get(`${this.uri}/Dashboard/admin/getcompany/${id}`);
   }
+
+  deleteCompany(id: any) {
+    return this.http.delete(`${this.uri}/Dashboard/admin/deletecompany/${id}`);
+  }
 }

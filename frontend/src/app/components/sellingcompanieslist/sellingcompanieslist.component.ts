@@ -21,4 +21,10 @@ export class SellingcompanieslistComponent implements OnInit {
       console.log(this.companies);
     });
   }
+
+  deleteCompany(id: any) {
+    this.companyService.deleteCompany(id).subscribe(() => {
+      this.fetchCompanies();
+    });
+  }
 }
