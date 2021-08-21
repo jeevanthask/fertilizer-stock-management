@@ -29,4 +29,16 @@ export class OfficerService {
   deleteOfficer(id: any) {
     return this.http.delete(`${this.uri}/Dashboard/admin/deleteofficer/${id}`);
   }
+
+  updateOfficer(id: any, firstname: any, secondname: any, position: any) {
+    const officer = {
+      firstname: firstname,
+      secondname: secondname,
+      position: position,
+    };
+    return this.http.put(
+      `${this.uri}/Dashboard/admin/updateofficer/${id}`,
+      officer
+    );
+  }
 }

@@ -29,4 +29,16 @@ export class FarmerService {
   deleteFarmer(id: any) {
     return this.http.delete(`${this.uri}/Dashboard/admin/deletefarmer/${id}`);
   }
+
+  updateFarmer(id: any, firstname: any, secondname: any, address: any) {
+    const farmer = {
+      firstname: firstname,
+      secondname: secondname,
+      address: address,
+    };
+    return this.http.put(
+      `${this.uri}/Dashboard/admin/updatefarmer/${id}`,
+      farmer
+    );
+  }
 }

@@ -37,4 +37,25 @@ export class CompanyService {
   deleteCompany(id: any) {
     return this.http.delete(`${this.uri}/Dashboard/admin/deletecompany/${id}`);
   }
+
+  updateCompany(
+    id: any,
+    firstname: any,
+    secondname: any,
+    email: any,
+    telephone: any,
+    address: any
+  ) {
+    const company = {
+      firstname: firstname,
+      secondname: secondname,
+      email: email,
+      telephone: telephone,
+      address: address,
+    };
+    return this.http.put(
+      `${this.uri}/Dashboard/admin/updatecompany/${id}`,
+      company
+    );
+  }
 }

@@ -34,4 +34,16 @@ export class FertilizerService {
       `${this.uri}/Dashboard/admin/deletefertilizer/${id}`
     );
   }
+
+  updateFertilizer(id: any, name: any, companyname: any, producttype: any) {
+    const fertilizer = {
+      name: name,
+      companyname: companyname,
+      producttype: producttype,
+    };
+    return this.http.put(
+      `${this.uri}/Dashboard/admin/updatefertilizer/${id}`,
+      fertilizer
+    );
+  }
 }
