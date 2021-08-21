@@ -20,6 +20,7 @@ connection.once("open", function () {
 app.use("/Dashboard/admin", require("./routes/signupfarmers.router"));
 app.use("/Dashboard/admin", require("./routes/getfarmers.router"));
 app.use("/Dashboard/admin", require("./routes/deletefarmer.router"));
+app.use("/Dashboard/admin", require("./routes/updatefarmer.router"));
 
 app.use("/Dashboard/admin", require("./routes/addfertilizer.router"));
 app.use("/Dashboard/admin", require("./routes/getfertilizers.router"));
