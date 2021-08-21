@@ -25,6 +25,7 @@ app.use("/Dashboard/admin", require("./routes/updatefarmer.router"));
 app.use("/Dashboard/admin", require("./routes/addfertilizer.router"));
 app.use("/Dashboard/admin", require("./routes/getfertilizers.router"));
 app.use("/Dashboard/admin", require("./routes/deletefertilizer.router"));
+app.use("/Dashboard/admin", require("./routes/updatefertilizer.router"));
 
 app.use("/Dashboard/admin", require("./routes/addofficer.router"));
 app.use("/Dashboard/admin", require("./routes/getofficers.router"));
@@ -34,5 +35,6 @@ app.use("/Dashboard/admin", require("./routes/updateofficer.router"));
 app.use("/Dashboard/admin", require("./routes/addcompany.router"));
 app.use("/Dashboard/admin", require("./routes/getcompanies.router"));
 app.use("/Dashboard/admin", require("./routes/deletecompany.router"));
+app.use("/Dashboard/admin", require("./routes/updatecompany.router"));
 
 app.listen(PORT, () => console.log(`app is listening in port ${PORT} ...`));
