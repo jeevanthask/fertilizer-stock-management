@@ -35,6 +35,10 @@ import {FarmerService} from "./services/farmer.service";
 import {HttpClientModule} from "@angular/common/http";
 import {DropdownModule} from 'primeng/dropdown';
 import {TableModule} from 'primeng/table';
+import { UpdatefarmerComponent } from './components/updatefarmer/updatefarmer.component';
+import { UpdateofficerComponent } from './components/updateofficer/updateofficer.component';
+import { UpdatefertilizerComponent } from './components/updatefertilizer/updatefertilizer.component';
+import { UpdatecompanyComponent } from './components/updatecompany/updatecompany.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import {TableModule} from 'primeng/table';
     Chart01Component,
     Chart02Component,
     Chart03Component,
-    Chart04Component
+    Chart04Component,
+    UpdatefarmerComponent,
+    UpdateofficerComponent,
+    UpdatefertilizerComponent,
+    UpdatecompanyComponent
   ],
   imports: [
     BrowserModule,
