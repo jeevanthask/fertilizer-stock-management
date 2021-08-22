@@ -1,55 +1,53 @@
-import {Component, OnInit} from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-
   items: MenuItem[] = [];
-  isAddFarmerClicked: any
-  isFarmersListClicked: any
-  isPanelClicked: any
+  isAddFarmerClicked: any;
+  isFarmersListClicked: any;
+  isPanelClicked: any;
 
-  constructor() {
-  }
+  constructor() {}
 
   clickShowGraphs() {
-    this.isPanelClicked = 'showGraphs'
+    this.isPanelClicked = 'showGraphs';
   }
 
   clickAddFarmer() {
-    this.isPanelClicked = 'addFarmer'
+    this.isPanelClicked = 'addFarmer';
   }
 
   clickFarmersList() {
-    this.isPanelClicked = 'farmersList'
+    this.isPanelClicked = 'farmersList';
   }
 
   clickAddOfficer() {
-    this.isPanelClicked = 'addOfficer'
+    this.isPanelClicked = 'addOfficer';
   }
 
   clickOfficersList() {
-    this.isPanelClicked = 'officersList'
+    this.isPanelClicked = 'officersList';
   }
 
   clickAddFertilizer() {
-    this.isPanelClicked = 'addFertilizer'
+    this.isPanelClicked = 'addFertilizer';
   }
 
   clickFertilizersList() {
-    this.isPanelClicked = 'fertilizersList'
+    this.isPanelClicked = 'fertilizersList';
   }
 
   clickAddCompany() {
-    this.isPanelClicked = 'addCompany'
+    this.isPanelClicked = 'addCompany';
   }
 
   clickCompaniesList() {
-    this.isPanelClicked = 'companiesList'
+    this.isPanelClicked = 'companiesList';
   }
 
   ngOnInit(): void {
@@ -63,9 +61,9 @@ export class DashboardComponent implements OnInit {
             icon: 'pi pi-cog',
             command: () => {
               this.clickShowGraphs();
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         label: 'Farmers',
@@ -76,16 +74,16 @@ export class DashboardComponent implements OnInit {
             icon: 'pi pi-plus-circle',
             command: () => {
               this.clickAddFarmer();
-            }
+            },
           },
           {
             label: 'Farmers List',
             icon: 'pi pi-th-large',
             command: () => {
               this.clickFarmersList();
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         label: 'Officers',
@@ -96,16 +94,16 @@ export class DashboardComponent implements OnInit {
             icon: 'pi pi-plus-circle',
             command: () => {
               this.clickAddOfficer();
-            }
+            },
           },
           {
             label: 'Officers List',
             icon: 'pi pi-th-large',
             command: () => {
               this.clickOfficersList();
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         label: 'Fertilizers',
@@ -116,16 +114,16 @@ export class DashboardComponent implements OnInit {
             icon: 'pi pi-plus-circle',
             command: () => {
               this.clickAddFertilizer();
-            }
+            },
           },
           {
             label: 'Fertilizer List',
             icon: 'pi pi-th-large',
             command: () => {
               this.clickFertilizersList();
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         label: 'Companies',
@@ -136,19 +134,17 @@ export class DashboardComponent implements OnInit {
             icon: 'pi pi-plus-circle',
             command: () => {
               this.clickAddCompany();
-            }
+            },
           },
           {
             label: 'Company List',
             icon: 'pi pi-th-large',
             command: () => {
               this.clickCompaniesList();
-            }
-          }
-        ]
-      }
-    ]
+            },
+          },
+        ],
+      },
+    ];
   }
-
-
 }

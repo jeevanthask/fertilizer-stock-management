@@ -8,6 +8,7 @@ import { FarmerService } from '../../services/farmer.service';
 })
 export class FarmerslistComponent implements OnInit {
   farmers: any = [];
+  isUpdateFarmerClicked: any;
 
   constructor(private farmerService: FarmerService) {}
 
@@ -26,5 +27,15 @@ export class FarmerslistComponent implements OnInit {
     this.farmerService.deleteFarmer(id).subscribe(() => {
       this.fetchFarmers();
     });
+  }
+
+  clickUpdateFarmer(id: any) {
+    console.log(id);
+    this.isUpdateFarmerClicked = 'updateFarmer';
+    alert(id);
+  }
+
+  handleBack() {
+    alert('cbducb');
   }
 }
