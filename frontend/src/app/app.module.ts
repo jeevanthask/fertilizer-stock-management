@@ -78,7 +78,8 @@ import { UpdatecompanyComponent } from './components/updatecompany/updatecompany
     ToolbarModule,
     HttpClientModule,
     DropdownModule,
-    TableModule
+    TableModule,
+
 
   ],
   providers: [FarmerService],

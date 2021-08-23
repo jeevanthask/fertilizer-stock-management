@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FarmerService } from '../../services/farmer.service';
+import {Component, OnInit} from '@angular/core';
+import {FarmerService} from '../../services/farmer.service';
+
 
 @Component({
   selector: 'app-farmerslist',
@@ -9,8 +10,10 @@ import { FarmerService } from '../../services/farmer.service';
 export class FarmerslistComponent implements OnInit {
   farmers: any = [];
   isUpdateFarmerClicked: any;
+  farmerId: any = ''
 
-  constructor(private farmerService: FarmerService) {}
+  constructor(private farmerService: FarmerService) {
+  }
 
   ngOnInit() {
     this.fetchFarmers();
@@ -31,9 +34,12 @@ export class FarmerslistComponent implements OnInit {
 
   clickUpdateFarmer(id: any) {
     console.log(id);
+    this.farmerId = id
+    console.log('farmer is',this.farmerId)
     this.isUpdateFarmerClicked = 'updateFarmer';
-    alert(id);
   }
+
+
 
   handleBack() {
     alert('cbducb');

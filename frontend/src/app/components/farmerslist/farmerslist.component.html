@@ -1,6 +1,3 @@
-<!-- <div
-  *ngIf="isUpdateFarmerClicked == 'updateFarmer'; then updateFarmerBlock"
-></div> -->
 <div
   *ngIf="isUpdateFarmerClicked; then updateFarmerBlock; else farmersListBlock"
 ></div>
@@ -13,7 +10,7 @@
     label="Back To List"
     class="p-button-info m-2"
   ></button>
-  <app-updatefarmer></app-updatefarmer>
+  <app-updatefarmer farmerId="{{farmerId}}"></app-updatefarmer>
 </ng-template>
 
 <ng-template #farmersListBlock>
