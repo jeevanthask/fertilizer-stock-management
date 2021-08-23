@@ -1,1 +1,31 @@
-<p>updatecompany works!</p>
+<div class="container p-5">
+  <form [formGroup]="updateForm" class="create-form">
+    <div class="mb-3">
+      <label class="form-label">First Name</label><br>
+      <input type="text" pInputText required value={{company.firstname}} #firstname/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Second Name</label><br>
+      <input type="text" pInputText required value={{company.secondname}} #secondname/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label><br>
+      <input type="text" pInputText required value={{company.email}} #email/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Telephone</label><br>
+      <input type="text" pInputText required value={{company.telephone}} #telephone/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Address</label><br>
+      <input type="text" pInputText required value={{company.address}} #address/>
+    </div>
+
+
+    <button pButton type="submit" label="Submit" class="p-button-help"
+            (click)="updateCompany(firstname.value,secondname.value,email.value,telephone.value,address.value)">
+    </button>
+  </form>
+</div>
+
+

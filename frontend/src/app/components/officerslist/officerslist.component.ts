@@ -37,8 +37,6 @@ export class OfficerslistComponent implements OnInit {
     this.isUpdateOfficerClicked = 'updateFarmer';
   }
 
-
-
   handleBack() {
     alert('cbducb');
   }
