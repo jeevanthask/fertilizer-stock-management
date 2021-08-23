@@ -22,7 +22,6 @@ export class UpdatefarmerComponent implements OnInit {
     });
   }
 
-
   ngOnInit(): void {
     this.farmerService.getFarmerById(this.farmerId).subscribe(res => {
       this.farmer = res

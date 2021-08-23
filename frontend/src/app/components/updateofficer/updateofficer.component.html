@@ -1,1 +1,21 @@
-<p>updateofficer works!</p>
+<div class="container p-5">
+  <form [formGroup]="updateForm" class="create-form">
+    <div class="mb-3">
+      <label class="form-label">First Name</label><br>
+      <input type="text" pInputText value={{officer.firstname}} required #firstname/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Second Name</label><br>
+      <input type="text" pInputText value={{officer.secondname}} required #secondname/>
+    </div>
+    <div class="mb-3">
+      <p-dropdown [options]="officerTypes" placeholder="Select the Type" optionLabel="name"
+                  [showClear]="true" #position></p-dropdown>
+    </div>
+
+    <button pButton type="submit" label="Submit" class="p-button-help"
+            (click)="updateOfficer(firstname.value,secondname.value,position.value)">
+    </button>
+  </form>
+</div>
+

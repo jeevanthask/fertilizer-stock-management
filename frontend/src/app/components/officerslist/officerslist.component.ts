@@ -8,6 +8,8 @@ import { OfficerService } from 'src/app/services/officer.service';
 })
 export class OfficerslistComponent implements OnInit {
   officers: any = [];
+  isUpdateOfficerClicked: any;
+  officerId: any = ''
 
   constructor(private officerService: OfficerService) {}
 
@@ -26,5 +28,18 @@ export class OfficerslistComponent implements OnInit {
     this.officerService.deleteOfficer(id).subscribe(() => {
       this.fetchOfficers();
     });
+  }
+
+  clickUpdateOfficer(id: any) {
+    console.log(id);
+    this.officerId = id
+    console.log('officer is',this.officerId)
+    this.isUpdateOfficerClicked = 'updateFarmer';
+  }
+
+
+
+  handleBack() {
+    alert('cbducb');
   }
 }
