@@ -9,6 +9,9 @@ import { FertilizerService } from 'src/app/services/fertilizer.service';
 export class FertilizerslistComponent implements OnInit {
   fertilizers: any = [];
 
+  isUpdateFertilizerClicked: any;
+  fertilizerId: any = ''
+
   constructor(private ferilizerService: FertilizerService) {}
 
   ngOnInit() {
@@ -26,5 +29,16 @@ export class FertilizerslistComponent implements OnInit {
     this.ferilizerService.deleteFertilizer(id).subscribe(() => {
       this.fetchFertilizers();
     });
+  }
+
+  clickUpdateFertilizer(id: any) {
+    console.log(id);
+    this.fertilizerId = id
+    console.log('fertilizer is',this.fertilizerId)
+    this.isUpdateFertilizerClicked = 'updateFertilizer';
+  }
+
+  handleBack() {
+    alert('cbducb');
   }
 }
