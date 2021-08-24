@@ -39,6 +39,7 @@ import { UpdatefarmerComponent } from './components/updatefarmer/updatefarmer.co
 import { UpdateofficerComponent } from './components/updateofficer/updateofficer.component';
 import { UpdatefertilizerComponent } from './components/updatefertilizer/updatefertilizer.component';
 import { UpdatecompanyComponent } from './components/updatecompany/updatecompany.component';
+import { LoginpageComponent } from './components/loginpage/loginpage.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { UpdatecompanyComponent } from './components/updatecompany/updatecompany
     UpdatefarmerComponent,
     UpdateofficerComponent,
     UpdatefertilizerComponent,
-    UpdatecompanyComponent
+    UpdatecompanyComponent,
+    LoginpageComponent
   ],
   imports: [
     BrowserModule,
