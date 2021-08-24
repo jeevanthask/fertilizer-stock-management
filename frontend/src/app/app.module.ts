@@ -40,6 +40,7 @@ import { UpdateofficerComponent } from './components/updateofficer/updateofficer
 import { UpdatefertilizerComponent } from './components/updatefertilizer/updatefertilizer.component';
 import { UpdatecompanyComponent } from './components/updatecompany/updatecompany.component';
 import { LoginpageComponent } from './components/loginpage/loginpage.component';
+import { Chart05Component } from './components/chart05/chart05.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { LoginpageComponent } from './components/loginpage/loginpage.component';
     UpdateofficerComponent,
     UpdatefertilizerComponent,
     UpdatecompanyComponent,
-    LoginpageComponent
+    LoginpageComponent,
+    Chart05Component
   ],
   imports: [
     BrowserModule,

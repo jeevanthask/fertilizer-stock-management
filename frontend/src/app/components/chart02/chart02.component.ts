@@ -1,38 +1,27 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-chart02',
   templateUrl: './chart02.component.html',
-  styleUrls: ['./chart02.component.css']
+  styleUrls: ['./chart02.component.css'],
 })
 export class Chart02Component implements OnInit {
-
   data: any;
 
   chartOptions: any;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.data = {
-      labels: ['A', 'B', 'C'],
+      labels: ['A', 'B', 'D'],
       datasets: [
         {
           data: [300, 50, 100],
-          backgroundColor: [
-            "#42A5F5",
-            "#66BB6A",
-            "#FFA726"
-          ],
-          hoverBackgroundColor: [
-            "#64B5F6",
-            "#81C784",
-            "#FFB74D"
-          ]
-        }
-      ]
+          backgroundColor: ['#ff3d00', '#1565c0', '#ffff00'],
+          hoverBackgroundColor: ['#64B5F6', '#81C784', '#FFB74D'],
+        },
+      ],
     };
-
   }
 }

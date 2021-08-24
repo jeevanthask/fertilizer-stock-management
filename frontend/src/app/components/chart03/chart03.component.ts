@@ -3,16 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-chart03',
   templateUrl: './chart03.component.html',
-  styleUrls: ['./chart03.component.css']
+  styleUrls: ['./chart03.component.css'],
 })
 export class Chart03Component implements OnInit {
-
   data: any;
 
   chartOptions: any;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.data = {
@@ -20,20 +18,10 @@ export class Chart03Component implements OnInit {
       datasets: [
         {
           data: [300, 50, 100],
-          backgroundColor: [
-            "#42A5F5",
-            "#66BB6A",
-            "#FFA726"
-          ],
-          hoverBackgroundColor: [
-            "#64B5F6",
-            "#81C784",
-            "#FFB74D"
-          ]
-        }
-      ]
+          backgroundColor: ['#e65100', '#64dd17', '#18ffff'],
+          hoverBackgroundColor: ['#64B5F6', '#81C784', '#FFB74D'],
+        },
+      ],
     };
-
   }
-
 }
