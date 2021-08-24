@@ -1,20 +1,30 @@
 <div class="container p-5">
   <form [formGroup]="createForm" class="create-form">
     <div class="mb-3">
-      <label class="form-label">First Name</label><br>
-      <input type="text" pInputText required #firstname/>
+      <label class="form-label">First Name</label><br />
+      <input type="text" pInputText required #firstname />
     </div>
     <div class="mb-3">
-      <label class="form-label">Second Name</label><br>
-      <input type="text" pInputText required #secondname/>
+      <label class="form-label">Second Name</label><br />
+      <input type="text" pInputText required #secondname />
     </div>
     <div class="mb-3">
-      <p-dropdown [options]="officerTypes" placeholder="Select the Type" optionLabel="name"
-                  [showClear]="true" #position></p-dropdown>
+      <p-dropdown
+        [options]="officerTypes"
+        [style]="{ width: '20rem' }"
+        placeholder="Select the Type"
+        optionLabel="name"
+        [showClear]="true"
+        #position
+      ></p-dropdown>
     </div>
 
-    <button pButton type="submit" label="Submit" class="p-button-help"
-            (click)="addOfficer(firstname.value,secondname.value,position.value)">
-    </button>
+    <button
+      pButton
+      type="submit"
+      label="Submit"
+      class="p-button-help"
+      (click)="addOfficer(firstname.value, secondname.value, position.value)"
+    ></button>
   </form>
 </div>
