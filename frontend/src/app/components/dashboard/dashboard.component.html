@@ -2,31 +2,38 @@
   <app-navbar></app-navbar>
 </div>
 <div class="container-fluid">
-
   <div class="row">
-    <div class="col-md-3 ">
-
-      <p-panelMenu [transitionOptions]="'200ms'" [model]="items" [style]="{'width':'100%'}"></p-panelMenu>
-
+    <div class="col-md-3">
+      <p-panelMenu
+        [transitionOptions]="'200ms'"
+        [model]="items"
+        [style]="{ width: '100%' }"
+      ></p-panelMenu>
     </div>
-
 
     <div class="col-md-9">
       <div class="row">
-
         <div *ngIf="isPanelClicked == 'addFarmer'; then addFarmerBlock"></div>
-        <div *ngIf="isPanelClicked == 'farmersList'; then farmersListBlock"></div>
+        <div
+          *ngIf="isPanelClicked == 'farmersList'; then farmersListBlock"
+        ></div>
         <div *ngIf="isPanelClicked == 'showGraphs'; then showGraphsBlock"></div>
         <div *ngIf="isPanelClicked == 'addOfficer'; then addOfficerBlock"></div>
-        <div *ngIf="isPanelClicked == 'officersList'; then officersListBlock"></div>
-        <div *ngIf="isPanelClicked == 'addFertilizer'; then addFertilizerBlock"></div>
-        <div *ngIf="isPanelClicked == 'fertilizersList'; then fertilizersListBlock"></div>
+        <div
+          *ngIf="isPanelClicked == 'officersList'; then officersListBlock"
+        ></div>
+        <div
+          *ngIf="isPanelClicked == 'addFertilizer'; then addFertilizerBlock"
+        ></div>
+        <div
+          *ngIf="isPanelClicked == 'fertilizersList'; then fertilizersListBlock"
+        ></div>
         <div *ngIf="isPanelClicked == 'addCompany'; then addCompanyBlock"></div>
-        <div *ngIf="isPanelClicked == 'companiesList'; then companiesListBlock"></div>
-
+        <div
+          *ngIf="isPanelClicked == 'companiesList'; then companiesListBlock"
+        ></div>
 
         <div class="col-md-12">
-
           <ng-template #addFarmerBlock>
             <app-addfarmers></app-addfarmers>
           </ng-template>
@@ -62,7 +69,7 @@
           <ng-template #showGraphsBlock>
             <div class="row">
               <div class="col-md-12">
-                 <app-chart01></app-chart01>
+                <app-chart01></app-chart01>
               </div>
             </div>
 
@@ -85,15 +92,9 @@
               </div>
             </div>
           </ng-template>
-
         </div>
-
       </div>
     </div>
   </div>
   <p-scrollTop [threshold]="200"></p-scrollTop>
 </div>
-
-
-
-

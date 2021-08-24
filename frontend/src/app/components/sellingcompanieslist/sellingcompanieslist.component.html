@@ -1,5 +1,9 @@
 <div
-  *ngIf="isUpdateCompanyClicked; then updateCompanyBlock; else companiesListBlock"
+  *ngIf="
+    isUpdateCompanyClicked;
+    then updateCompanyBlock;
+    else companiesListBlock
+  "
 ></div>
 
 <ng-template #updateCompanyBlock>
@@ -10,7 +14,7 @@
     label="Back To List"
     class="p-button-info m-2"
   ></button>
-  <app-updatecompany companyId={{companyId}}></app-updatecompany>
+  <app-updatecompany companyId="{{ companyId }}"></app-updatecompany>
 </ng-template>
 
 <ng-template #companiesListBlock>
@@ -62,5 +66,3 @@
     </ng-template>
   </p-table>
 </ng-template>
-
-

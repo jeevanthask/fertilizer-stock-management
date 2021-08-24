@@ -9,7 +9,7 @@ import { CompanyService } from 'src/app/services/company.service';
 export class SellingcompanieslistComponent implements OnInit {
   companies: any = [];
   isUpdateCompanyClicked: any;
-  companyId: any = ''
+  companyId: any = '';
 
   constructor(private companyService: CompanyService) {}
 
@@ -31,9 +31,8 @@ export class SellingcompanieslistComponent implements OnInit {
   }
 
   clickUpdateCompany(id: any) {
-
-    this.companyId = id
-    console.log('company is',this.companyId)
+    this.companyId = id;
+    console.log('company is', this.companyId);
     this.isUpdateCompanyClicked = 'updateCompany';
   }
 

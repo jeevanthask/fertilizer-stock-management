@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {FarmerService} from 'src/app/services/farmer.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FarmerService } from 'src/app/services/farmer.service';
 
 @Component({
   selector: 'app-updatefarmer',
@@ -8,9 +8,8 @@ import {FarmerService} from 'src/app/services/farmer.service';
   styleUrls: ['./updatefarmer.component.css'],
 })
 export class UpdatefarmerComponent implements OnInit {
-
-  @Input() farmerId: any
-  farmer: any = {}
+  @Input() farmerId: any;
+  farmer: any = {};
 
   updateForm: FormGroup;
 
@@ -23,22 +22,20 @@ export class UpdatefarmerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.farmerService.getFarmerById(this.farmerId).subscribe(res => {
-      this.farmer = res
-    })
+    this.farmerService.getFarmerById(this.farmerId).subscribe((res) => {
+      this.farmer = res;
+    });
   }
 
   updateFarmer(firstname: any, secondname: any, address: any) {
     this.farmerService
-      .updateFarmer(this.farmerId,firstname, secondname , address)
+      .updateFarmer(this.farmerId, firstname, secondname, address)
       .subscribe(() => {
         alert('The farmer updated successfully!!');
       });
 
-    this.farmer.firstname = ''
-    this.farmer.secondname = ''
-    this.farmer.address = ''
+    this.farmer.firstname = '';
+    this.farmer.secondname = '';
+    this.farmer.address = '';
   }
-
-
 }
