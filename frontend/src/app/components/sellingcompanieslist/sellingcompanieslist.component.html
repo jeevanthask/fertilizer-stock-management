@@ -45,22 +45,28 @@
         <td>{{ company.telephone }}</td>
         <td>{{ company.address }}</td>
         <td>
-          <button
-            pButton
-            pRipple
-            type="button"
-            icon="pi pi-cog"
-            class="p-button-rounded p-button-secondary"
-            (click)="clickUpdateCompany(company._id)"
-          ></button>
-          <button
-            pButton
-            pRipple
-            type="button"
-            icon="pi pi-trash"
-            class="p-button-rounded p-button-danger"
-            (click)="deleteCompany(company._id)"
-          ></button>
+          <div class="row">
+            <div class="col-md-3 m-1">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-cog"
+                class="p-button-rounded p-button-secondary"
+                (click)="clickUpdateCompany(company._id)"
+              ></button>
+            </div>
+            <div class="col-md-3 m-1">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-trash"
+                class="p-button-rounded p-button-danger"
+                (click)="deleteCompany(company._id)"
+              ></button>
+            </div>
+          </div>
         </td>
       </tr>
     </ng-template>

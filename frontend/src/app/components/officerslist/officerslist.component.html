@@ -1,5 +1,9 @@
 <div
-  *ngIf="isUpdateOfficerClicked; then updateOfficerBlock; else officersListBlock"
+  *ngIf="
+    isUpdateOfficerClicked;
+    then updateOfficerBlock;
+    else officersListBlock
+  "
 ></div>
 
 <ng-template #updateOfficerBlock>
@@ -10,7 +14,7 @@
     label="Back To List"
     class="p-button-info m-2"
   ></button>
-  <app-updateofficer officerId={{officerId}}></app-updateofficer>
+  <app-updateofficer officerId="{{ officerId }}"></app-updateofficer>
 </ng-template>
 <ng-template #officersListBlock>
   <p-table
@@ -36,26 +40,30 @@
         <td>{{ officer.secondname }}</td>
         <td>{{ officer.position }}</td>
         <td>
-          <button
-            pButton
-            pRipple
-            type="button"
-            icon="pi pi-cog"
-            class="p-button-rounded p-button-secondary"
-            (click)="clickUpdateOfficer(officer._id)"
-          ></button>
-          <button
-            pButton
-            pRipple
-            type="button"
-            icon="pi pi-trash"
-            class="p-button-rounded p-button-danger"
-            (click)="deleteOfficer(officer._id)"
-          ></button>
+          <div class="row">
+            <div class="col-md-2 m-1">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-cog"
+                class="p-button-rounded p-button-secondary"
+                (click)="clickUpdateOfficer(officer._id)"
+              ></button>
+            </div>
+            <div class="col-md-2 m-1">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-trash"
+                class="p-button-rounded p-button-danger"
+                (click)="deleteOfficer(officer._id)"
+              ></button>
+            </div>
+          </div>
         </td>
       </tr>
     </ng-template>
   </p-table>
-
 </ng-template>
-

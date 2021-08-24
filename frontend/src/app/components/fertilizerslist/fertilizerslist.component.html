@@ -1,5 +1,9 @@
 <div
-  *ngIf="isUpdateFertilizerClicked; then updateFertilizerBlock; else fertilizersListBlock"
+  *ngIf="
+    isUpdateFertilizerClicked;
+    then updateFertilizerBlock;
+    else fertilizersListBlock
+  "
 ></div>
 
 <ng-template #updateFertilizerBlock>
@@ -10,7 +14,9 @@
     label="Back To List"
     class="p-button-info m-2"
   ></button>
-  <app-updatefertilizer fertilizerId="{{fertilizerId}}"></app-updatefertilizer>
+  <app-updatefertilizer
+    fertilizerId="{{ fertilizerId }}"
+  ></app-updatefertilizer>
 </ng-template>
 
 <ng-template #fertilizersListBlock>
@@ -37,27 +43,30 @@
         <td>{{ fertilizer.companyname }}</td>
         <td>{{ fertilizer.producttype }}</td>
         <td>
-          <button
-            pButton
-            pRipple
-            type="button"
-            icon="pi pi-cog"
-            class="p-button-rounded p-button-secondary"
-            (click)="clickUpdateFertilizer(fertilizer._id)"
-          ></button>
-          <button
-            pButton
-            pRipple
-            type="button"
-            icon="pi pi-trash"
-            class="p-button-rounded p-button-danger"
-            (click)="deleteFertilizer(fertilizer._id)"
-          ></button>
+          <div class="row">
+            <div class="col-md-2 m-1">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-cog"
+                class="p-button-rounded p-button-secondary"
+                (click)="clickUpdateFertilizer(fertilizer._id)"
+              ></button>
+            </div>
+            <div class="col-md-2 m-1">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-trash"
+                class="p-button-rounded p-button-danger"
+                (click)="deleteFertilizer(fertilizer._id)"
+              ></button>
+            </div>
+          </div>
         </td>
       </tr>
     </ng-template>
   </p-table>
 </ng-template>
-
-
-

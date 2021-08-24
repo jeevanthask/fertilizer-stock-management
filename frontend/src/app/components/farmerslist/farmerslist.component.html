@@ -37,22 +37,28 @@
         <td>{{ product.secondname }}</td>
         <td>{{ product.address }}</td>
         <td>
-          <button
-            pButton
-            pRipple
-            type="button"
-            icon="pi pi-cog"
-            class="p-button-rounded p-button-secondary"
-            (click)="clickUpdateFarmer(product._id)"
-          ></button>
-          <button
-            pButton
-            pRipple
-            type="button"
-            icon="pi pi-trash"
-            class="p-button-rounded p-button-danger"
-            (click)="deleteFarmer(product._id)"
-          ></button>
+          <div class="row">
+            <div class="col-md-2 m-1">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-cog"
+                class="p-button-rounded p-button-secondary"
+                (click)="clickUpdateFarmer(product._id)"
+              ></button>
+            </div>
+            <div class="col-md-2 m-1">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-trash"
+                class="p-button-rounded p-button-danger"
+                (click)="deleteFarmer(product._id)"
+              ></button>
+            </div>
+          </div>
         </td>
       </tr>
     </ng-template>
