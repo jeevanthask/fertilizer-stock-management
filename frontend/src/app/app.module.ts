@@ -43,6 +43,9 @@ import { LoginpageComponent } from './components/loginpage/loginpage.component';
 import { Chart05Component } from './components/chart05/chart05.component';
 import { DefaultdisplayComponent } from './components/defaultdisplay/defaultdisplay.component';
 import { OrganizationChartModule } from 'primeng/organizationchart';
+import { FieldsetModule } from 'primeng/fieldset';
+import { CarouselModule } from 'primeng/carousel';
+import { CombochartComponent } from './components/combochart/combochart.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +71,7 @@ import { OrganizationChartModule } from 'primeng/organizationchart';
     LoginpageComponent,
     Chart05Component,
     DefaultdisplayComponent,
+    CombochartComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,6 +91,8 @@ import { OrganizationChartModule } from 'primeng/organizationchart';
     DropdownModule,
     TableModule,
     OrganizationChartModule,
+    FieldsetModule,
+    CarouselModule,
   ],
   providers: [FarmerService],
   bootstrap: [AppComponent],
