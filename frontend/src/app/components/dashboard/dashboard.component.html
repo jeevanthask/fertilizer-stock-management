@@ -13,6 +13,7 @@
 
     <div class="col-md-9">
       <div class="row">
+        <div *ngIf="isDefaultPanelClicked; then defaultDisplayBlock"></div>
         <div *ngIf="isPanelClicked == 'addFarmer'; then addFarmerBlock"></div>
         <div
           *ngIf="isPanelClicked == 'farmersList'; then farmersListBlock"
@@ -34,11 +35,9 @@
         ></div>
 
         <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-12">
-              <h3>The main page content goes here</h3>
-            </div>
-          </div>
+          <ng-template #defaultDisplayBlock>
+            default display goes here
+          </ng-template>
 
           <ng-template #addFarmerBlock>
             <app-addfarmers></app-addfarmers>

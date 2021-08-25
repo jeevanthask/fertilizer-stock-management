@@ -11,43 +11,58 @@ export class DashboardComponent implements OnInit {
   isAddFarmerClicked: any;
   isFarmersListClicked: any;
   isPanelClicked: any;
+  isDefaultPanelClicked: boolean = true;
 
   constructor() {}
 
+  clickShowHome() {
+    this.isDefaultPanelClicked = true;
+    this.isPanelClicked = '';
+  }
+
   clickShowGraphs() {
     this.isPanelClicked = 'showGraphs';
+    this.isDefaultPanelClicked = false;
   }
 
   clickAddFarmer() {
     this.isPanelClicked = 'addFarmer';
+    this.isDefaultPanelClicked = false;
   }
 
   clickFarmersList() {
     this.isPanelClicked = 'farmersList';
+    this.isDefaultPanelClicked = false;
   }
 
   clickAddOfficer() {
     this.isPanelClicked = 'addOfficer';
+    this.isDefaultPanelClicked = false;
   }
 
   clickOfficersList() {
     this.isPanelClicked = 'officersList';
+    this.isDefaultPanelClicked = false;
   }
 
   clickAddFertilizer() {
     this.isPanelClicked = 'addFertilizer';
+    this.isDefaultPanelClicked = false;
   }
 
   clickFertilizersList() {
     this.isPanelClicked = 'fertilizersList';
+    this.isDefaultPanelClicked = false;
   }
 
   clickAddCompany() {
     this.isPanelClicked = 'addCompany';
+    this.isDefaultPanelClicked = false;
   }
 
   clickCompaniesList() {
     this.isPanelClicked = 'companiesList';
+    this.isDefaultPanelClicked = false;
   }
 
   ngOnInit(): void {
@@ -56,6 +71,13 @@ export class DashboardComponent implements OnInit {
         label: 'Home',
         // icon: 'pi pi-plus-circle',
         items: [
+          {
+            label: 'Home',
+            icon: 'pi pi-home',
+            command: () => {
+              this.clickShowHome();
+            },
+          },
           {
             label: 'Show Graphs',
             icon: 'pi pi-cog',
