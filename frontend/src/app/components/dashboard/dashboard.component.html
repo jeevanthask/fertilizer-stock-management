@@ -33,6 +33,10 @@
         <div
           *ngIf="isPanelClicked == 'companiesList'; then companiesListBlock"
         ></div>
+        <div *ngIf="isPanelClicked == 'issueBill'; then issueBillBlock"></div>
+        <div
+          *ngIf="isPanelClicked == 'issueBillList'; then issueBillListBlock"
+        ></div>
 
         <div class="col-md-12">
           <ng-template #defaultDisplayBlock>
@@ -69,6 +73,14 @@
 
           <ng-template #companiesListBlock>
             <app-sellingcompanieslist></app-sellingcompanieslist>
+          </ng-template>
+
+          <ng-template #issueBillBlock>
+            <app-issue-fertilizer></app-issue-fertilizer>
+          </ng-template>
+
+          <ng-template #issueBillListBlock>
+            <app-issue-fertilizer-list></app-issue-fertilizer-list>
           </ng-template>
 
           <ng-template #showGraphsBlock>

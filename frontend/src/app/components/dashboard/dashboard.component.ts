@@ -65,6 +65,16 @@ export class DashboardComponent implements OnInit {
     this.isDefaultPanelClicked = false;
   }
 
+  clickBillIssue() {
+    this.isPanelClicked = 'issueBill';
+    this.isDefaultPanelClicked = false;
+  }
+
+  clickBillIssueList() {
+    this.isPanelClicked = 'issueBillList';
+    this.isDefaultPanelClicked = false;
+  }
+
   ngOnInit(): void {
     this.items = [
       {
@@ -163,6 +173,26 @@ export class DashboardComponent implements OnInit {
             icon: 'pi pi-th-large',
             command: () => {
               this.clickCompaniesList();
+            },
+          },
+        ],
+      },
+      {
+        label: 'Issue Fertilizer',
+        //  icon: 'pi pi-plus-circle',
+        items: [
+          {
+            label: 'Issue Bill',
+            icon: 'pi pi-plus-circle',
+            command: () => {
+              this.clickBillIssue();
+            },
+          },
+          {
+            label: 'Issue List',
+            icon: 'pi pi-th-large',
+            command: () => {
+              this.clickBillIssueList();
             },
           },
         ],

@@ -46,6 +46,8 @@ import { OrganizationChartModule } from 'primeng/organizationchart';
 import { FieldsetModule } from 'primeng/fieldset';
 import { CarouselModule } from 'primeng/carousel';
 import { CombochartComponent } from './components/combochart/combochart.component';
+import { IssueFertilizerComponent } from './components/issue-fertilizer/issue-fertilizer.component';
+import { IssueFertilizerListComponent } from './components/issue-fertilizer-list/issue-fertilizer-list.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,8 @@ import { CombochartComponent } from './components/combochart/combochart.componen
     Chart05Component,
     DefaultdisplayComponent,
     CombochartComponent,
+    IssueFertilizerComponent,
+    IssueFertilizerListComponent,
   ],
   imports: [
     BrowserModule,
