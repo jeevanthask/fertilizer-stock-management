@@ -8,6 +8,9 @@ let Farmers = new Schema({
   secondname: {
     type: String,
   },
+  nic: {
+    type: String,
+  },
   address: {
     type: String,
   },

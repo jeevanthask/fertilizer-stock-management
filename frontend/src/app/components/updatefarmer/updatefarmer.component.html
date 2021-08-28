@@ -21,6 +21,10 @@
       />
     </div>
     <div class="mb-3">
+      <label class="form-label">NIC Number</label><br />
+      <input type="text" pInputText required value="{{ farmer.nic }}" #nic />
+    </div>
+    <div class="mb-3">
       <label class="form-label">Address</label><br />
       <input
         type="text"
@@ -36,7 +40,14 @@
       type="submit"
       label="Submit"
       class="p-button-help"
-      (click)="updateFarmer(firstname.value, secondname.value, address.value)"
+      (click)="
+        updateFarmer(
+          firstname.value,
+          secondname.value,
+          nic.value,
+          address.value
+        )
+      "
     ></button>
   </form>
 </div>

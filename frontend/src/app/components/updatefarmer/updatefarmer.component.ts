@@ -17,6 +17,7 @@ export class UpdatefarmerComponent implements OnInit {
     this.updateForm = this.fb.group({
       firstname: ['', Validators.required],
       secondname: '',
+      nic: '',
       address: '',
     });
   }
@@ -27,15 +28,16 @@ export class UpdatefarmerComponent implements OnInit {
     });
   }
 
-  updateFarmer(firstname: any, secondname: any, address: any) {
+  updateFarmer(firstname: any, secondname: any, nic: any, address: any) {
     this.farmerService
-      .updateFarmer(this.farmerId, firstname, secondname, address)
+      .updateFarmer(this.farmerId, firstname, secondname, nic, address)
       .subscribe(() => {
         alert('The farmer updated successfully!!');
       });
 
     this.farmer.firstname = '';
     this.farmer.secondname = '';
+    this.farmer.nic = '';
     this.farmer.address = '';
   }
 }

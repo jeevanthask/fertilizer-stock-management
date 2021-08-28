@@ -9,10 +9,11 @@ export class FarmerService {
 
   constructor(private http: HttpClient) {}
 
-  addFarmer(firstname: any, secondname: any, address: any) {
+  addFarmer(firstname: any, secondname: any, nic: any, address: any) {
     const farmer = {
       firstname: firstname,
       secondname: secondname,
+      nic: nic,
       address: address,
     };
     return this.http.post(`${this.uri}/Dashboard/admin/addfarmer`, farmer);
@@ -30,10 +31,17 @@ export class FarmerService {
     return this.http.delete(`${this.uri}/Dashboard/admin/deletefarmer/${id}`);
   }
 
-  updateFarmer(id: any, firstname: any, secondname: any, address: any) {
+  updateFarmer(
+    id: any,
+    firstname: any,
+    secondname: any,
+    nic: any,
+    address: any
+  ) {
     const farmer = {
       firstname: firstname,
       secondname: secondname,
+      nic: nic,
       address: address,
     };
     return this.http.put(

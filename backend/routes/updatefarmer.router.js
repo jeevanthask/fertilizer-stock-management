@@ -17,6 +17,7 @@ router.put("/updatefarmer/:id", (req, res) => {
   var farmer = {
     firstname: req.body.firstname,
     secondname: req.body.secondname,
+    nic: req.body.nic,
     address: req.body.address,
   };
   Farmer.findByIdAndUpdate(

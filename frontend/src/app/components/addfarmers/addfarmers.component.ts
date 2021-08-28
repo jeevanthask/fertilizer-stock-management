@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { FarmerService } from '../../services/farmer.service';
 
 @Component({
@@ -15,24 +14,26 @@ export class AddfarmersComponent implements OnInit {
     this.createForm = this.fb.group({
       firstname: ['', Validators.required],
       secondname: '',
+      nic: '',
       address: '',
     });
   }
 
-  addFarmer(firstname: any, secondname: any, address: any) {
+  addFarmer(firstname: any, secondname: any, nic: any, address: any) {
     console.log(firstname);
     console.log(secondname);
     console.log(address);
 
     this.farmerService
-      .addFarmer(firstname, secondname, address)
+      .addFarmer(firstname, secondname, nic, address)
       .subscribe(() => {
-        alert('The book added successfully!!');
+        alert('The farmer added successfully!!');
       });
 
     this.createForm = this.fb.group({
       firstname: ['', Validators.required],
       secondname: '',
+      nic: '',
       address: '',
     });
   }
