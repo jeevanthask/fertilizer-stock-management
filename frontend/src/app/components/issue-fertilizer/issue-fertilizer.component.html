@@ -4,12 +4,19 @@
       <label class="form-label">Search Farmer by NIC</label><br />
       <p-autoComplete
         [suggestions]="filteredResults"
-        (completeMethod)="search($event)"
+        (completeMethod)="filterCountry($event)"
         [dropdown]="true"
         [style]="{ width: '20rem' }"
-        placeholder="Type nic number"
+        field="name"
+        [dropdown]="true"
         #searchedNic
-      ></p-autoComplete>
+      >
+        <ng-template let-country pTemplate="item">
+          <div class="country-item">
+            <div>{{ country }}</div>
+          </div>
+        </ng-template>
+      </p-autoComplete>
     </div>
     <!-- <div class="mb-3">
       <label class="form-label">Second Name</label><br />

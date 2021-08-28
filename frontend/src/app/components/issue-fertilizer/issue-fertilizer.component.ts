@@ -37,7 +37,7 @@ export class IssueFertilizerComponent implements OnInit {
     console.log(nic);
   }
 
-  search(event: any) {
+  loadFarmers() {
     this.farmerService.getFarmers().subscribe((data) => {
       this.results = data;
 
@@ -47,5 +47,33 @@ export class IssueFertilizerComponent implements OnInit {
 
       console.log();
     });
+  }
+
+  // search(event: any) {
+  //   this.farmerService.getFarmers().subscribe((data) => {
+  //     this.results = data;
+
+  //     this.filteredResults = this.results.map((a: any) => a.nic);
+
+  //     console.log(this.filteredResults);
+
+  //     console.log();
+  //   });
+  // }
+
+  filterCountry(event: any) {
+    this.loadFarmers();
+
+    let filtered: any[] = [];
+    let query = event.query;
+    for (let i = 0; i < this.filteredResults.length; i++) {
+      let country = this.filteredResults[i];
+      console.log(country);
+      if (country.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+        filtered.push(country);
+      }
+    }
+
+    this.filteredResults = filtered;
   }
 }
