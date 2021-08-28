@@ -48,6 +48,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { CombochartComponent } from './components/combochart/combochart.component';
 import { IssueFertilizerComponent } from './components/issue-fertilizer/issue-fertilizer.component';
 import { IssueFertilizerListComponent } from './components/issue-fertilizer-list/issue-fertilizer-list.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { IssueFertilizerListComponent } from './components/issue-fertilizer-list
     OrganizationChartModule,
     FieldsetModule,
     CarouselModule,
+    AutoCompleteModule,
   ],
   providers: [FarmerService],
   bootstrap: [AppComponent],

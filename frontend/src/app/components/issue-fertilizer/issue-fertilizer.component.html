@@ -1,1 +1,35 @@
-<p>issue-fertilizer works!</p>
+<div class="container p-5">
+  <form [formGroup]="createForm" class="create-form">
+    <div class="mb-3">
+      <label class="form-label">Search Farmer by NIC</label><br />
+      <p-autoComplete
+        [suggestions]="filteredResults"
+        (completeMethod)="search($event)"
+        [dropdown]="true"
+        [style]="{ width: '20rem' }"
+        placeholder="Type nic number"
+        #searchedNic
+      ></p-autoComplete>
+    </div>
+    <!-- <div class="mb-3">
+      <label class="form-label">Second Name</label><br />
+      <input type="text" pInputText required #secondname />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">NIC Number</label><br />
+      <input type="text" pInputText required #nic />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Address</label><br />
+      <input type="text" pInputText required #address />
+    </div> -->
+
+    <button
+      pButton
+      type="submit"
+      label="Submit"
+      class="p-button-primary"
+      (click)="submitHandle(searchedNic.value)"
+    ></button>
+  </form>
+</div>
