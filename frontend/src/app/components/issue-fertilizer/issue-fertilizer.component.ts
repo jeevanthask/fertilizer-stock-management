@@ -45,7 +45,7 @@ export class IssueFertilizerComponent implements OnInit {
 
       console.log(this.filteredResults);
 
-      console.log();
+      console.log(this.filteredResults.length);
     });
   }
 
