@@ -1,42 +1,21 @@
-<div class="container p-5">
-  <form [formGroup]="createForm" class="create-form">
-    <div class="mb-3">
-      <label class="form-label">Search Farmer by NIC</label><br />
-      <p-autoComplete
-        [suggestions]="filteredResults"
-        (completeMethod)="filterCountry($event)"
-        [dropdown]="true"
-        [style]="{ width: '20rem' }"
-        field="name"
-        [dropdown]="true"
-        #searchedNic
-      >
-        <ng-template let-country pTemplate="item">
-          <div class="country-item">
-            <div>{{ country }}</div>
-          </div>
-        </ng-template>
-      </p-autoComplete>
+<div>
+  <div class="row" style="margin-top: 2rem">
+    <div class="col-md-12">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText #inputnic />
+        <label for="float-input">Search by NIC</label>
+      </span>
     </div>
-    <!-- <div class="mb-3">
-      <label class="form-label">Second Name</label><br />
-      <input type="text" pInputText required #secondname />
+  </div>
+  <div class="row" style="margin-top: 0.5rem">
+    <div class="col-md-12">
+      <button
+        pButton
+        type="submit"
+        label="Search"
+        class="p-button-success"
+        (click)="searchFarmer(inputnic.value)"
+      ></button>
     </div>
-    <div class="mb-3">
-      <label class="form-label">NIC Number</label><br />
-      <input type="text" pInputText required #nic />
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Address</label><br />
-      <input type="text" pInputText required #address />
-    </div> -->
-
-    <button
-      pButton
-      type="submit"
-      label="Submit"
-      class="p-button-primary"
-      (click)="submitHandle(searchedNic.value)"
-    ></button>
-  </form>
+  </div>
 </div>
