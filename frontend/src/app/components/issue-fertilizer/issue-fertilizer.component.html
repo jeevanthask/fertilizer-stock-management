@@ -18,11 +18,27 @@
       ></button>
     </div>
   </div>
-  <div>
-    <div class="row">
-      <div class="col-md-12">
-        {{ firstname }}
+  <div *ngIf="showResults; then defaultDisplayBlock"></div>
+  <ng-template #defaultDisplayBlock>
+    <div style="margin-top: 0.5rem">
+      <div class="row">
+        <div class="col-md-12">
+          <h5>First Name</h5>
+          {{ firstname }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h5>Second Name</h5>
+          {{ secondname }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h5>Address</h5>
+          {{ address }}
+        </div>
       </div>
     </div>
-  </div>
+  </ng-template>
 </div>

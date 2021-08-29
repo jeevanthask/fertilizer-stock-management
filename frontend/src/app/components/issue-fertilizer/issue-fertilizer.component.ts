@@ -13,6 +13,7 @@ export class IssueFertilizerComponent implements OnInit {
   firstname: any;
   secondname: any;
   address: any;
+  showResults: boolean = false;
 
   constructor(private farmerService: FarmerService, private fb: FormBuilder) {
     this.createForm = this.fb.group({
@@ -27,12 +28,13 @@ export class IssueFertilizerComponent implements OnInit {
       this.firstname = '';
       this.secondname = '';
       this.address = '';
+      this.showResults = false;
       alert('No Farmer for this ID');
     } else {
       this.firstname = farmerObj.firstname;
       this.secondname = farmerObj.secondname;
       this.address = farmerObj.address;
-
+      this.showResults = true;
       console.log(this.firstname);
       console.log(this.secondname);
       console.log(this.address);
