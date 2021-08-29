@@ -24,10 +24,10 @@ export class IssueFertilizerComponent implements OnInit {
     const farmerObj = this.farmers.find((k: any) => k.nic == inputnic);
 
     if (farmerObj == undefined) {
-      alert('No Farmer for this ID');
       this.firstname = '';
       this.secondname = '';
       this.address = '';
+      alert('No Farmer for this ID');
     } else {
       this.firstname = farmerObj.firstname;
       this.secondname = farmerObj.secondname;
