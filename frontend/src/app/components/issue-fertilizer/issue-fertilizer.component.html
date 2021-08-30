@@ -23,20 +23,26 @@
     <div style="margin-top: 0.5rem">
       <p-card>
         <div class="row mb-3">
-          <label class="col-sm-2 col-form-label">First Name</label>
-          <div class="col-sm-10">
+          <label class="col-md-12 col-form-label"
+            ><strong>First Name</strong></label
+          >
+          <div class="col-md-12">
             {{ firstname }}
           </div>
         </div>
         <div class="row mb-3">
-          <label class="col-sm-2 col-form-label">Second Name</label>
-          <div class="col-sm-10">
+          <label class="col-md-12 col-form-label"
+            ><strong>Second Name</strong>
+          </label>
+          <div class="col-md-12">
             {{ secondname }}
           </div>
         </div>
         <div class="row mb-3">
-          <label class="col-sm-2 col-form-label">Address</label>
-          <div class="col-sm-10">
+          <label class="col-md-12 col-form-label"
+            ><strong>Address</strong>
+          </label>
+          <div class="col-md-12">
             {{ address }}
           </div>
         </div>
@@ -67,4 +73,47 @@
       ></button>
     </div>
   </div>
+
+  <div *ngIf="billPreview; then showBillBlock"></div>
+
+  <ng-template #showBillBlock>
+    <div style="margin-top: 1rem">
+      <p-card>
+        <div class="row mb-3">
+          <label class="col-md-12 col-form-label"><h3>Bill Preview</h3></label>
+        </div>
+        <div class="row mb-3">
+          <label class="col-md-12 col-form-label"
+            ><strong>First Name</strong></label
+          >
+          <div class="col-md-12">
+            {{ firstname }}
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-md-12 col-form-label"
+            ><strong>Second Name</strong>
+          </label>
+          <div class="col-md-12">
+            {{ secondname }}
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-md-12 col-form-label"
+            ><strong>Address</strong>
+          </label>
+          <div class="col-md-12">
+            {{ address }}
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="col-md-12 col-form-label"
+            ><strong>Purchased Fertilizers</strong>
+          </label>
+          <div class="col-md-12">//purchased fertilizers goes here</div>
+        </div>
+      </p-card>
+    </div>
+  </ng-template>
 </div>

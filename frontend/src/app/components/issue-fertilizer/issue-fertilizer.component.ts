@@ -20,6 +20,7 @@ export class IssueFertilizerComponent implements OnInit {
   address: any;
   showResults: boolean = false;
   cities: City[] = [];
+  billPreview: boolean = false;
 
   constructor(private farmerService: FarmerService, private fb: FormBuilder) {
     this.createForm = this.fb.group({
@@ -49,9 +50,6 @@ export class IssueFertilizerComponent implements OnInit {
       this.secondname = farmerObj.secondname;
       this.address = farmerObj.address;
       this.showResults = true;
-      console.log(this.firstname);
-      console.log(this.secondname);
-      console.log(this.address);
     }
   }
 
@@ -67,9 +65,16 @@ export class IssueFertilizerComponent implements OnInit {
   }
 
   issueFerilizer(selectedItems: any) {
-    let selectedFertilizer: any = [];
-    console.log(selectedItems);
+    let selectedFertilizers: any = []; //array which conains the names of fertilizers user selected
 
-    console.log(selectedFertilizer);
+    for (let item in selectedItems) {
+      let intitem = parseInt(item);
+
+      console.log(this.cities[intitem]);
+      selectedFertilizers.push(this.cities[intitem].name);
+    }
+
+    this.billPreview = true;
+    console.log(selectedFertilizers);
   }
 }
