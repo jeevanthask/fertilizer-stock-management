@@ -67,16 +67,49 @@
       <button
         pButton
         type="submit"
-        label="Issue Items"
-        class="p-button-danger"
-        (click)="issueFerilizer(selectedItems.value)"
+        label="Next"
+        class="p-button-success"
+        (click)="nextStep(selectedItems.value)"
       ></button>
     </div>
   </div>
 
-  <div *ngIf="billPreview; then showBillBlock"></div>
+  <div *ngIf="nextTemplate; then showNextBillStep"></div>
 
-  <ng-template #showBillBlock>
+  <ng-template #showNextBillStep>
+    <div style="margin-top: 1rem">
+      <div class="row mb-3">
+        <div *ngFor="let i of selectedFertilizers">
+          <label class="col-md-12 col-form-label"
+            ><strong>{{ i }}</strong>
+          </label>
+          <div class="col-md-12">
+            <label for="horizontal" style="margin-right: 0.5rem"
+              >Quantity</label
+            >
+            <p-inputNumber
+              [showButtons]="true"
+              buttonLayout="horizontal"
+              inputId="horizontal"
+              spinnerMode="horizontal"
+              [step]="0.25"
+              decrementButtonClass="p-button-danger"
+              incrementButtonClass="p-button-success"
+              incrementButtonIcon="pi pi-plus"
+              decrementButtonIcon="pi pi-minus"
+              mode="decimal"
+              currency="EUR"
+              [min]="0"
+              [style]="{ width: '3rem' }"
+            >
+            </p-inputNumber>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- <ng-template #showBillBlock>
     <div style="margin-top: 1rem">
       <p-card>
         <div class="row mb-3">
@@ -115,5 +148,5 @@
         </div>
       </p-card>
     </div>
-  </ng-template>
+  </ng-template> -->
 </div>

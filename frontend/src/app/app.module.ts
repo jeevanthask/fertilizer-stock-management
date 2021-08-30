@@ -50,6 +50,7 @@ import { IssueFertilizerComponent } from './components/issue-fertilizer/issue-fe
 import { IssueFertilizerListComponent } from './components/issue-fertilizer-list/issue-fertilizer-list.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
     CarouselModule,
     AutoCompleteModule,
     MultiSelectModule,
+    InputNumberModule,
   ],
   providers: [FarmerService],
   bootstrap: [AppComponent],
