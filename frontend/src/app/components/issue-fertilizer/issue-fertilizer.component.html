@@ -43,4 +43,28 @@
       </p-card>
     </div>
   </ng-template>
+
+  <div class="row" style="margin-top: 1rem">
+    <div class="col-md-12">
+      <p-multiSelect
+        [options]="cities"
+        [style]="{ width: '20rem' }"
+        placeholder="Select the Fertilizer Type"
+        optionLabel="name"
+        #selectedItems
+      ></p-multiSelect>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 0.5rem">
+    <div class="col-md-12">
+      <button
+        pButton
+        type="submit"
+        label="Issue Items"
+        class="p-button-danger"
+        (click)="issueFerilizer(selectedItems.value)"
+      ></button>
+    </div>
+  </div>
 </div>

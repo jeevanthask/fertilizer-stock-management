@@ -49,6 +49,7 @@ import { CombochartComponent } from './components/combochart/combochart.componen
 import { IssueFertilizerComponent } from './components/issue-fertilizer/issue-fertilizer.component';
 import { IssueFertilizerListComponent } from './components/issue-fertilizer-list/issue-fertilizer-list.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     FieldsetModule,
     CarouselModule,
     AutoCompleteModule,
+    MultiSelectModule,
   ],
   providers: [FarmerService],
   bootstrap: [AppComponent],

@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FarmerService } from 'src/app/services/farmer.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+interface City {
+  name: string;
+  code: string;
+}
+
 @Component({
   selector: 'app-issue-fertilizer',
   templateUrl: './issue-fertilizer.component.html',
@@ -14,11 +19,20 @@ export class IssueFertilizerComponent implements OnInit {
   secondname: any;
   address: any;
   showResults: boolean = false;
+  cities: City[] = [];
 
   constructor(private farmerService: FarmerService, private fb: FormBuilder) {
     this.createForm = this.fb.group({
       inputnic: '',
     });
+
+    this.cities = [
+      { name: 'NPK', code: 'NY' },
+      { name: 'Urea', code: 'RM' },
+      { name: 'PST', code: 'LDN' },
+      { name: 'Fertilizer 4', code: 'IST' },
+      { name: 'Fertilizer 5', code: 'PRS' },
+    ];
   }
 
   searchFarmer(inputnic: any) {
@@ -50,5 +64,12 @@ export class IssueFertilizerComponent implements OnInit {
       this.farmers = data;
       console.log(this.farmers);
     });
+  }
+
+  issueFerilizer(selectedItems: any) {
+    let selectedFertilizer: any = [];
+    console.log(selectedItems);
+
+    console.log(selectedFertilizer);
   }
 }
