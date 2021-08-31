@@ -81,4 +81,8 @@ export class IssueFertilizerComponent implements OnInit {
     console.log(this.selectedFertilizers);
     console.log(this.selectedFertilizersLength);
   }
+
+  issueBillHandle() {
+    alert('issue bill handle');
+  }
 }
