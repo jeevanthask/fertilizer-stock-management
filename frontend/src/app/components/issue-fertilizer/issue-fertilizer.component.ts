@@ -79,8 +79,12 @@ export class IssueFertilizerComponent implements OnInit {
     this.nextTemplate = true;
     this.selectedFertilizersLength = this.selectedFertilizers.length;
 
+    console.log('selected fertilizers');
     console.log(this.selectedFertilizers);
     console.log(this.selectedFertilizersLength);
+
+    console.log('selected items input paramter');
+    console.log(selectedItems);
   }
 
   issueBillHandle() {
