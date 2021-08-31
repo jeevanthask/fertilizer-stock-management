@@ -7,7 +7,7 @@ import { AddfarmersComponent } from './components/addfarmers/addfarmers.componen
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FarmerslistComponent } from './components/farmerslist/farmerslist.component';
 import { AddfertilizersComponent } from './components/addfertilizers/addfertilizers.component';
 import { FertilizerslistComponent } from './components/fertilizerslist/fertilizerslist.component';
@@ -103,6 +103,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     AutoCompleteModule,
     MultiSelectModule,
     InputNumberModule,
+    FormsModule,
   ],
   providers: [FarmerService],
   bootstrap: [AppComponent],

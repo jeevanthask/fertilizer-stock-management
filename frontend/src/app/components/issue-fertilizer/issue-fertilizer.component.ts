@@ -24,6 +24,7 @@ export class IssueFertilizerComponent implements OnInit {
   nextTemplate: boolean = false;
   selectedFertilizers: any = []; //array which conains the names of fertilizers user selected
   selectedFertilizersLength = 0;
+  horizontalValue: any;
 
   constructor(private farmerService: FarmerService, private fb: FormBuilder) {
     this.createForm = this.fb.group({
@@ -83,6 +84,8 @@ export class IssueFertilizerComponent implements OnInit {
   }
 
   issueBillHandle() {
+    console.log('horizontal value');
+    console.log(this.horizontalValue);
     alert('issue bill handle');
   }
 }
