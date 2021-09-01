@@ -142,7 +142,7 @@ export class DashboardComponent implements OnInit {
         //  icon: 'pi pi-plus-circle',
         items: [
           {
-            label: 'Add Fertilizer',
+            label: 'Add New Fertilizer',
             icon: 'pi pi-plus-circle',
             command: () => {
               this.clickAddFertilizer();
