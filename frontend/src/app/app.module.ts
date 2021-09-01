@@ -53,6 +53,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { AddfertilizerstockComponent } from './components/addfertilizerstock/addfertilizerstock.component';
 import { UpdatefertilizerstockComponent } from './components/updatefertilizerstock/updatefertilizerstock.component';
+import { FertilizerstocklistComponent } from './components/fertilizerstocklist/fertilizerstocklist.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { UpdatefertilizerstockComponent } from './components/updatefertilizersto
     IssueFertilizerListComponent,
     AddfertilizerstockComponent,
     UpdatefertilizerstockComponent,
+    FertilizerstocklistComponent,
   ],
   imports: [
     BrowserModule,

@@ -37,6 +37,18 @@
         <div
           *ngIf="isPanelClicked == 'issueBillList'; then issueBillListBlock"
         ></div>
+        <div
+          *ngIf="
+            isPanelClicked == 'addFertilizerStock';
+            then addFertilizerStockBlock
+          "
+        ></div>
+        <div
+          *ngIf="
+            isPanelClicked == 'ferilizerStockList';
+            then ferilizerStockListBlock
+          "
+        ></div>
 
         <div class="col-md-12">
           <ng-template #defaultDisplayBlock>
@@ -81,6 +93,14 @@
 
           <ng-template #issueBillListBlock>
             <app-issue-fertilizer-list></app-issue-fertilizer-list>
+          </ng-template>
+
+          <ng-template #addFertilizerStockBlock>
+            <app-addfertilizerstock></app-addfertilizerstock>
+          </ng-template>
+
+          <ng-template #ferilizerStockListBlock>
+            <app-fertilizerstocklist></app-fertilizerstocklist>
           </ng-template>
 
           <ng-template #showGraphsBlock>

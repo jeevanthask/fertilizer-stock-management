@@ -76,11 +76,13 @@ export class DashboardComponent implements OnInit {
   }
 
   clickAddFertilizerStock() {
-    alert('from fertilizer sock add');
+    this.isPanelClicked = 'addFertilizerStock';
+    this.isDefaultPanelClicked = false;
   }
 
   clickFertilizerStockList() {
-    alert('fertilizer stock list');
+    this.isPanelClicked = 'ferilizerStockList';
+    this.isDefaultPanelClicked = false;
   }
 
   ngOnInit(): void {
