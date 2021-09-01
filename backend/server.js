@@ -38,5 +38,7 @@ app.use("/Dashboard/admin", require("./routes/deletecompany.router"));
 app.use("/Dashboard/admin", require("./routes/updatecompany.router"));
 
 app.use("/Dashboard/admin", require("./routes/addFertilizerStock.router"));
+app.use("/Dashboard/admin", require("./routes/getFertilizerStock.router"));
+app.use("/Dashboard/admin", require("./routes/updateFertilizerStock.router"));
 
 app.listen(PORT, () => console.log(`app is listening in port ${PORT} ...`));
