@@ -51,6 +51,8 @@ import { IssueFertilizerListComponent } from './components/issue-fertilizer-list
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { AddfertilizerstockComponent } from './components/addfertilizerstock/addfertilizerstock.component';
+import { UpdatefertilizerstockComponent } from './components/updatefertilizerstock/updatefertilizerstock.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     CombochartComponent,
     IssueFertilizerComponent,
     IssueFertilizerListComponent,
+    AddfertilizerstockComponent,
+    UpdatefertilizerstockComponent,
   ],
   imports: [
     BrowserModule,

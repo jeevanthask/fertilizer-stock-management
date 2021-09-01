@@ -75,6 +75,14 @@ export class DashboardComponent implements OnInit {
     this.isDefaultPanelClicked = false;
   }
 
+  clickAddFertilizerStock() {
+    alert('from fertilizer sock add');
+  }
+
+  clickFertilizerStockList() {
+    alert('fertilizer stock list');
+  }
+
   ngOnInit(): void {
     this.items = [
       {
@@ -149,10 +157,24 @@ export class DashboardComponent implements OnInit {
             },
           },
           {
+            label: 'Add Fertilizer Stock',
+            icon: 'pi pi-plus-circle',
+            command: () => {
+              this.clickAddFertilizerStock();
+            },
+          },
+          {
             label: 'Fertilizer List',
             icon: 'pi pi-th-large',
             command: () => {
               this.clickFertilizersList();
+            },
+          },
+          {
+            label: 'Fertilizer Stock List',
+            icon: 'pi pi-th-large',
+            command: () => {
+              this.clickFertilizerStockList();
             },
           },
         ],
