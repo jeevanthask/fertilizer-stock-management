@@ -37,6 +37,10 @@ export class IssueFertilizerComponent implements OnInit {
   fertilizerProductTypes: any = [];
   fertilizerProductNames: FertilizerProductName[];
 
+  isNextBtnClicked: any = false;
+
+  generateQuantityNames: any = [];
+
   constructor(
     private farmerService: FarmerService,
     private fertilizerService: FertilizerService,
@@ -75,8 +79,8 @@ export class IssueFertilizerComponent implements OnInit {
   }
 
   handleNext(selectedItems: any) {
-    alert('icnicn');
-    console.log(selectedItems);
+    this.isNextBtnClicked = true;
+    this.generateQuantityNames = selectedItems;
   }
 
   ngOnInit() {
@@ -86,7 +90,6 @@ export class IssueFertilizerComponent implements OnInit {
   fetchFarmers() {
     this.farmerService.getFarmers().subscribe((data) => {
       this.farmers = data;
-      console.log(this.farmers);
     });
   }
 }

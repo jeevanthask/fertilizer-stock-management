@@ -53,7 +53,7 @@
           <button
             pButton
             type="submit"
-            label="Issue Bill"
+            label="Next"
             class="p-button-success"
             (click)="handleNext(selectedItems.value)"
           ></button>
@@ -61,4 +61,17 @@
       </div>
     </div>
   </div>
+
+  <div *ngIf="isNextBtnClicked; then nextNgTemplate"></div>
+  <ng-template #nextNgTemplate>
+    <div style="margin-top: 0.5rem">
+      <div class="row">
+        <div class="col-md-12">
+          <div *ngFor="let item of generateQuantityNames">
+            {{ item.name }}
+          </div>
+        </div>
+      </div>
+    </div></ng-template
+  >
 </div>
