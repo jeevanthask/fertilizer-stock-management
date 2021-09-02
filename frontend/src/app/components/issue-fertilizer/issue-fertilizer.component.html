@@ -21,32 +21,20 @@
   <div *ngIf="showResults; then defaultDisplayBlock"></div>
   <ng-template #defaultDisplayBlock>
     <div style="margin-top: 0.5rem">
-      <p-card>
-        <div class="row mb-3">
-          <label class="col-md-12 col-form-label"
-            ><strong>First Name</strong></label
-          >
-          <div class="col-md-12">
-            {{ firstname }}
-          </div>
-        </div>
-        <div class="row mb-3">
-          <label class="col-md-12 col-form-label"
-            ><strong>Second Name</strong>
-          </label>
-          <div class="col-md-12">
-            {{ secondname }}
-          </div>
-        </div>
-        <div class="row mb-3">
-          <label class="col-md-12 col-form-label"
-            ><strong>Address</strong>
-          </label>
-          <div class="col-md-12">
-            {{ address }}
-          </div>
-        </div>
-      </p-card>
+      <div class="mb-3">
+        <label class="form-label">First Name</label><br />
+        <input type="text" placeholder="{{ firstname }}" pInputText required />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Second Name</label><br />
+        <input type="text" placeholder="{{ secondname }}" pInputText required />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Address</label><br />
+        <input type="text" placeholder="{{ address }}" pInputText required />
+      </div>
     </div>
   </ng-template>
 
@@ -61,105 +49,4 @@
       ></p-multiSelect>
     </div>
   </div>
-
-  <div class="row" style="margin-top: 0.5rem">
-    <div class="col-md-12">
-      <button
-        pButton
-        type="submit"
-        label="Next"
-        class="p-button-success"
-        (click)="nextStep(selectedItems.value)"
-      ></button>
-    </div>
-  </div>
-
-  <div *ngIf="nextTemplate; then showNextBillStep"></div>
-
-  <ng-template #showNextBillStep>
-    <div style="margin-top: 1rem">
-      <div class="row mb-3">
-        <div *ngFor="let i of selectedFertilizers">
-          <label class="col-md-12 col-form-label"
-            ><strong>{{ i }}</strong>
-          </label>
-          <div class="col-md-12">
-            <label for="horizontal" style="margin-right: 0.5rem"
-              >Quantity</label
-            >
-            <p-inputNumber
-              [showButtons]="true"
-              buttonLayout="horizontal"
-              inputId="horizontal"
-              spinnerMode="horizontal"
-              [step]="0.25"
-              decrementButtonClass="p-button-danger"
-              incrementButtonClass="p-button-success"
-              incrementButtonIcon="pi pi-plus"
-              decrementButtonIcon="pi pi-minus"
-              mode="decimal"
-              currency="EUR"
-              [min]="0"
-              [style]="{ width: '3rem' }"
-              [(ngModel)]="horizontalValue"
-            >
-            </p-inputNumber>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row" style="margin-top: 1rem">
-      <div class="col-md-12">
-        <button
-          pButton
-          type="submit"
-          label="Issue Bill"
-          class="p-button-success"
-          (click)="issueBillHandle()"
-        ></button>
-      </div>
-    </div>
-  </ng-template>
-
-  <!-- <ng-template #showBillBlock>
-    <div style="margin-top: 1rem">
-      <p-card>
-        <div class="row mb-3">
-          <label class="col-md-12 col-form-label"><h3>Bill Preview</h3></label>
-        </div>
-        <div class="row mb-3">
-          <label class="col-md-12 col-form-label"
-            ><strong>First Name</strong></label
-          >
-          <div class="col-md-12">
-            {{ firstname }}
-          </div>
-        </div>
-        <div class="row mb-3">
-          <label class="col-md-12 col-form-label"
-            ><strong>Second Name</strong>
-          </label>
-          <div class="col-md-12">
-            {{ secondname }}
-          </div>
-        </div>
-        <div class="row mb-3">
-          <label class="col-md-12 col-form-label"
-            ><strong>Address</strong>
-          </label>
-          <div class="col-md-12">
-            {{ address }}
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <label class="col-md-12 col-form-label"
-            ><strong>Purchased Fertilizers</strong>
-          </label>
-          <div class="col-md-12">//purchased fertilizers goes here</div>
-        </div>
-      </p-card>
-    </div>
-  </ng-template> -->
 </div>

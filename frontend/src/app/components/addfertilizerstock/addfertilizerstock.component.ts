@@ -58,5 +58,11 @@ export class AddfertilizerstockComponent implements OnInit {
     console.log(name.name);
     console.log(protype.name);
     console.log(quantity);
+
+    this.fertilizerService
+      .addFertilizerSock(name.name, protype.name, quantity)
+      .subscribe(() => {
+        alert('The fertilizer stock transaction successfull!!');
+      });
   }
 }
