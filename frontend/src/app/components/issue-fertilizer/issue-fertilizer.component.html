@@ -41,12 +41,24 @@
   <div class="row" style="margin-top: 1rem">
     <div class="col-md-12">
       <p-multiSelect
-        [options]="cities"
+        [options]="fertilizerProductNames"
         [style]="{ width: '20rem' }"
         placeholder="Select the Fertilizer Type"
         optionLabel="name"
         #selectedItems
       ></p-multiSelect>
+
+      <div class="col-md-12" style="margin-top: 1rem">
+        <div class="mb-3">
+          <button
+            pButton
+            type="submit"
+            label="Issue Bill"
+            class="p-button-success"
+            (click)="handleNext(selectedItems.value)"
+          ></button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

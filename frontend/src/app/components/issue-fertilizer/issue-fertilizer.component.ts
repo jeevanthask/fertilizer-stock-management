@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerService } from 'src/app/services/farmer.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FertilizerService } from 'src/app/services/fertilizer.service';
 
 interface City {
   name: string;
   code: string;
+}
+
+interface FertilizerProductName {
+  name: string;
+  companyname: string;
+  producttype: string;
 }
 
 @Component({
@@ -24,19 +31,30 @@ export class IssueFertilizerComponent implements OnInit {
   nextTemplate: boolean = false;
   selectedFertilizers: any = []; //array which conains the names of fertilizers user selected
   selectedFertilizersLength = 0;
+  fertilizers: any = [];
+  fertilizerNames: any = [];
 
-  constructor(private farmerService: FarmerService, private fb: FormBuilder) {
+  fertilizerProductTypes: any = [];
+  fertilizerProductNames: FertilizerProductName[];
+
+  constructor(
+    private farmerService: FarmerService,
+    private fertilizerService: FertilizerService,
+    private fb: FormBuilder
+  ) {
     this.createForm = this.fb.group({
       inputnic: '',
     });
 
-    this.cities = [
-      { name: 'NPK', code: 'NY' },
-      { name: 'Urea', code: 'RM' },
-      { name: 'PST', code: 'LDN' },
-      { name: 'Fertilizer 4', code: 'IST' },
-      { name: 'Fertilizer 5', code: 'PRS' },
-    ];
+    this.fertilizerService.getFertilizers().subscribe((data) => {
+      this.fertilizers = data;
+
+      for (let item in this.fertilizers) {
+        this.fertilizerNames.push(this.fertilizers[item]);
+      }
+    });
+
+    this.fertilizerProductNames = this.fertilizerNames;
   }
 
   searchFarmer(inputnic: any) {
@@ -54,6 +72,11 @@ export class IssueFertilizerComponent implements OnInit {
       this.address = farmerObj.address;
       this.showResults = true;
     }
+  }
+
+  handleNext(selectedItems: any) {
+    alert('icnicn');
+    console.log(selectedItems);
   }
 
   ngOnInit() {
