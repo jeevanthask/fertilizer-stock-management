@@ -2,6 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FertilizerService } from 'src/app/services/fertilizer.service';
 
+interface FertilizerType {
+  name: string;
+  code: string;
+}
+
+interface FertilizerProductName {
+  name: string;
+  companyname: string;
+  producttype: string;
+}
+
 @Component({
   selector: 'app-addfertilizerstock',
   templateUrl: './addfertilizerstock.component.html',
@@ -12,6 +23,8 @@ export class AddfertilizerstockComponent implements OnInit {
   fertilizers: any = [];
   fertilizerNames: any = [];
   fertilizerProductTypes: any = [];
+  fertilizerTypes: FertilizerType[];
+  fertilizerProductNames: FertilizerProductName[];
 
   constructor(
     private fertilizerService: FertilizerService,
@@ -22,31 +35,28 @@ export class AddfertilizerstockComponent implements OnInit {
       producttype: '',
       quantity: '',
     });
-  }
 
-  ngOnInit(): void {
-    this.fetchFertilizers();
-  }
+    this.fertilizerTypes = [
+      { name: 'Organic', code: 'NY' },
+      { name: 'Inorganic', code: 'RM' },
+    ];
 
-  fetchFertilizers() {
     this.fertilizerService.getFertilizers().subscribe((data) => {
       this.fertilizers = data;
 
-      console.log(this.fertilizers);
-      this.fetchFertilizerNamesAndProducts();
+      for (let item in this.fertilizers) {
+        this.fertilizerNames.push(this.fertilizers[item]);
+      }
     });
+
+    this.fertilizerProductNames = this.fertilizerNames;
   }
 
-  //fertilizer names and producttypes are inserted in to separate arrays
-  fetchFertilizerNamesAndProducts() {
-    for (let item in this.fertilizers) {
-      this.fertilizerNames.push(this.fertilizers[item].name);
-    }
-    console.log(this.fertilizerNames);
+  ngOnInit(): void {}
 
-    for (let item in this.fertilizers) {
-      this.fertilizerProductTypes.push(this.fertilizers[item].producttype);
-    }
-    console.log(this.fertilizerProductTypes);
+  sendStockToDB(name: any, protype: any, quantity: any) {
+    console.log(name.name);
+    console.log(protype.name);
+    console.log(quantity);
   }
 }
