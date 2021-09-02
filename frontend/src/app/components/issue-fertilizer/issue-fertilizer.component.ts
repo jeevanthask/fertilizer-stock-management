@@ -92,4 +92,8 @@ export class IssueFertilizerComponent implements OnInit {
       this.farmers = data;
     });
   }
+
+  handleGenerateBill() {
+    console.log('from generate bill');
+  }
 }
