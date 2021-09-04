@@ -101,7 +101,5 @@ export class IssueFertilizerComponent implements OnInit {
     console.log('from generate bill');
     console.log(this.xx);
     this.isBillPreviewClicked = true;
-    this.generateQuantityNames.push(this.xx);
-    console.log(this.generateQuantityNames);
   }
 }
