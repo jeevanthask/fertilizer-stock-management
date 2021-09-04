@@ -71,7 +71,14 @@
             <br />
             <label class="form-label">{{ item.name }}</label
             ><br />
-            <input type="text" placeholder="Quantity" pInputText required />
+            <input
+              type="text"
+              name="myinput"
+              placeholder="Quantity"
+              [(ngModel)]="xx"
+              pInputText
+              required
+            />
           </div>
         </div>
       </div>
