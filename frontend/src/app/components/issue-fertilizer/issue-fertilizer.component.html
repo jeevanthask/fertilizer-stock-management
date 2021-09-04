@@ -77,35 +77,8 @@
       </div>
     </div>
 
-    <div class="row" style="margin-top: 1rem">
+    <div class="row">
       <div class="col-md-12">
-        <p-card>
-          <div class="mb-0">
-            <label class="form-label"
-              ><strong><h4>Bill Preview</h4></strong></label
-            >
-          </div>
-          <div class="mb-1">
-            <label class="form-label"><strong>Farmer Name -</strong></label>
-            &nbsp;
-            <label class="form-label"
-              ><strong>{{ firstname }} &nbsp;{{ secondname }}</strong></label
-            >
-          </div>
-          <div class="mb-1">
-            <label class="form-label"><strong>Address - </strong></label>
-            &nbsp;
-            <label class="form-label"
-              ><strong>{{ address }}</strong></label
-            >
-          </div>
-          <div class="mb-1">
-            <label class="form-label"><strong>Items Bought - </strong></label>
-            &nbsp;
-            <label class="form-label"><strong>items goes here</strong></label>
-          </div>
-        </p-card>
-
         <div class="mb-3" style="margin-top: 1rem">
           <button
             pButton
@@ -115,6 +88,50 @@
             (click)="handleGenerateBill()"
           ></button>
         </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 1rem">
+      <div class="col-md-12">
+        <div *ngIf="isBillPreviewClicked; then billPreviewNgTemplate"></div>
+        <ng-template #billPreviewNgTemplate>
+          <p-card>
+            <div class="mb-0">
+              <label class="form-label"
+                ><strong><h4>Bill Preview</h4></strong></label
+              >
+            </div>
+            <div class="mb-1">
+              <label class="form-label"><strong>Farmer Name -</strong></label>
+              &nbsp;
+              <label class="form-label"
+                ><strong>{{ firstname }} &nbsp;{{ secondname }}</strong></label
+              >
+            </div>
+            <div class="mb-1">
+              <label class="form-label"><strong>Address - </strong></label>
+              &nbsp;
+              <label class="form-label"
+                ><strong>{{ address }}</strong></label
+              >
+            </div>
+            <div class="mb-1">
+              <label class="form-label"><strong>Items Bought - </strong></label>
+              &nbsp;
+              <label class="form-label"><strong>items goes here</strong></label>
+            </div>
+          </p-card>
+        </ng-template>
+
+        <!-- <div class="mb-3" style="margin-top: 1rem">
+          <button
+            pButton
+            type="submit"
+            label="Generate Bill"
+            class="p-button-danger"
+            (click)="handleGenerateBill()"
+          ></button>
+        </div> -->
       </div>
     </div>
   </ng-template>

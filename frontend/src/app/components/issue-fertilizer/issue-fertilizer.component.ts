@@ -41,6 +41,8 @@ export class IssueFertilizerComponent implements OnInit {
 
   generateQuantityNames: any = [];
 
+  isBillPreviewClicked: boolean = false;
+
   constructor(
     private farmerService: FarmerService,
     private fertilizerService: FertilizerService,
@@ -95,5 +97,6 @@ export class IssueFertilizerComponent implements OnInit {
 
   handleGenerateBill() {
     console.log('from generate bill');
+    this.isBillPreviewClicked = true;
   }
 }
