@@ -67,7 +67,7 @@
     <div style="margin-top: 0.5rem">
       <div class="row">
         <div class="col-md-12">
-          <div *ngFor="let item of generateQuantityNames">
+          <div *ngFor="let item of generateQuantityNames; let i = index">
             <br />
             <label class="form-label">{{ item.name }}</label
             ><br />
@@ -75,7 +75,7 @@
               type="text"
               name="myinput"
               placeholder="Quantity"
-              [(ngModel)]="xx"
+              [(ngModel)]="generateQuantityNames[i]"
               pInputText
               required
             />
