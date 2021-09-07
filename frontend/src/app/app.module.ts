@@ -54,6 +54,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { AddfertilizerstockComponent } from './components/addfertilizerstock/addfertilizerstock.component';
 import { UpdatefertilizerstockComponent } from './components/updatefertilizerstock/updatefertilizerstock.component';
 import { FertilizerstocklistComponent } from './components/fertilizerstocklist/fertilizerstocklist.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -110,6 +111,7 @@ import { FertilizerstocklistComponent } from './components/fertilizerstocklist/f
     MultiSelectModule,
     InputNumberModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [FarmerService],
   bootstrap: [AppComponent],
