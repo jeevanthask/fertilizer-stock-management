@@ -32,7 +32,7 @@ import { Chart02Component } from './components/chart02/chart02.component';
 import { Chart03Component } from './components/chart03/chart03.component';
 import { Chart04Component } from './components/chart04/chart04.component';
 import { FarmerService } from './services/farmer.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { UpdatefarmerComponent } from './components/updatefarmer/updatefarmer.component';
@@ -55,6 +55,8 @@ import { AddfertilizerstockComponent } from './components/addfertilizerstock/add
 import { UpdatefertilizerstockComponent } from './components/updatefertilizerstock/updatefertilizerstock.component';
 import { FertilizerstocklistComponent } from './components/fertilizerstocklist/fertilizerstocklist.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -113,7 +115,15 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     AppRoutingModule,
   ],
-  providers: [FarmerService],
+  providers: [
+    FarmerService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -15,11 +15,10 @@ export class LoginpageComponent implements OnInit {
   ngOnInit(): void {}
 
   handleLogin() {
-    //this.router.navigate(['/admin/dashboard']);
-
     this.authService.loginUser(this.loginUserData).subscribe((res: any) => {
       console.log(res);
       localStorage.setItem('token', res.token);
+      this.router.navigate(['/admin/dashboard']);
     });
   }
 }
