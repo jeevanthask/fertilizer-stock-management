@@ -16,9 +16,10 @@ export class LoginpageComponent implements OnInit {
 
   handleLogin() {
     //this.router.navigate(['/admin/dashboard']);
-    // console.log(this.loginUserData);
-    this.authService.loginUser(this.loginUserData).subscribe((res) => {
+
+    this.authService.loginUser(this.loginUserData).subscribe((res: any) => {
       console.log(res);
+      localStorage.setItem('token', res.token);
     });
   }
 }
