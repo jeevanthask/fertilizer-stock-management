@@ -2,11 +2,23 @@
   <form class="create-form">
     <div class="mb-3">
       <label class="form-label">UserName</label><br />
-      <input type="text" pInputText required #username />
+      <input
+        name="username"
+        type="text"
+        [(ngModel)]="loginUserData.username"
+        pInputText
+        required
+      />
     </div>
     <div class="mb-3">
       <label class="form-label">Password</label><br />
-      <input type="text" pInputText required #password />
+      <input
+        name="password"
+        type="text"
+        [(ngModel)]="loginUserData.password"
+        pInputText
+        required
+      />
     </div>
 
     <button
