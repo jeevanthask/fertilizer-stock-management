@@ -9,6 +9,8 @@ import { FarmerService } from '../../services/farmer.service';
 })
 export class AddfarmersComponent implements OnInit {
   createForm: FormGroup;
+  defplace = '';
+  displayModal: boolean = false;
 
   constructor(private farmerService: FarmerService, private fb: FormBuilder) {
     this.createForm = this.fb.group({
@@ -27,15 +29,10 @@ export class AddfarmersComponent implements OnInit {
     this.farmerService
       .addFarmer(firstname, secondname, nic, address)
       .subscribe(() => {
-        alert('The farmer added successfully!!');
+        this.displayModal = true;
       });
 
-    this.createForm = this.fb.group({
-      firstname: ['', Validators.required],
-      secondname: '',
-      nic: '',
-      address: '',
-    });
+    this.createForm.get('firstname')?.setValue('');
   }
 
   ngOnInit(): void {}

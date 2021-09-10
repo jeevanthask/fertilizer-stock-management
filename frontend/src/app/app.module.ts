@@ -57,6 +57,9 @@ import { FertilizerstocklistComponent } from './components/fertilizerstocklist/f
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -90,6 +93,9 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     FertilizerstocklistComponent,
   ],
   imports: [
+    DialogModule,
+    ConfirmDialogModule,
+
     BrowserModule,
     InputTextModule,
     ButtonModule,
