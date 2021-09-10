@@ -58,7 +58,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { CaptchaModule } from 'primeng/captcha';
 import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
@@ -93,15 +95,17 @@ import { DialogModule } from 'primeng/dialog';
     FertilizerstocklistComponent,
   ],
   imports: [
+    CaptchaModule,
     DialogModule,
     ConfirmDialogModule,
-
+    MessagesModule,
     BrowserModule,
     InputTextModule,
     ButtonModule,
     ReactiveFormsModule,
     AccordionModule,
     SidebarModule,
+    MessageModule,
     BrowserAnimationsModule,
     PanelMenuModule,
     ChartModule,
