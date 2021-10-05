@@ -25,6 +25,7 @@ export class AddfertilizerstockComponent implements OnInit {
   fertilizerProductTypes: any = [];
   fertilizerTypes: FertilizerType[];
   fertilizerProductNames: FertilizerProductName[];
+  displayModal: boolean = false;
 
   constructor(
     private fertilizerService: FertilizerService,
@@ -62,7 +63,7 @@ export class AddfertilizerstockComponent implements OnInit {
     this.fertilizerService
       .addFertilizerSock(name.name, protype.name, quantity)
       .subscribe(() => {
-        alert('The fertilizer stock transaction successfull!!');
+        this.displayModal = true;
       });
   }
 }

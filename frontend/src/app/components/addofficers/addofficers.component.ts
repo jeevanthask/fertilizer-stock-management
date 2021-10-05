@@ -1,55 +1,53 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {OfficerService} from "../../services/officer.service";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { OfficerService } from '../../services/officer.service';
 
 interface OfficerType {
-  name: string,
-  code: string
+  name: string;
+  code: string;
 }
 
 @Component({
   selector: 'app-addofficers',
   templateUrl: './addofficers.component.html',
-  styleUrls: ['./addofficers.component.css']
+  styleUrls: ['./addofficers.component.css'],
 })
 export class AddofficersComponent implements OnInit {
-
   createForm: FormGroup;
   officerTypes: OfficerType[];
+  displayModal: boolean = false;
 
   constructor(private officerService: OfficerService, private fb: FormBuilder) {
     this.createForm = this.fb.group({
       firstname: ['', Validators.required],
       secondname: '',
-      position: ''
+      position: '',
     });
 
     this.officerTypes = [
-      {name: 'officertype01', code: 'NY'},
-      {name: 'officertype02', code: 'RM'},
-      {name: 'officertype03', code: 'EE'}
+      { name: 'officertype01', code: 'NY' },
+      { name: 'officertype02', code: 'RM' },
+      { name: 'officertype03', code: 'EE' },
     ];
   }
 
   addOfficer(firstname: any, secondname: any, position: any) {
+    console.log(firstname);
+    console.log(secondname);
+    console.log(position);
 
-    console.log(firstname)
-    console.log(secondname)
-    console.log(position)
-
-    this.officerService.addOfficer(firstname, secondname, position.name).subscribe(() => {
-      alert("The officer added successfully!!")
-    });
+    this.officerService
+      .addOfficer(firstname, secondname, position.name)
+      .subscribe(() => {
+        this.displayModal = true;
+      });
 
     this.createForm = this.fb.group({
       firstname: ['', Validators.required],
       secondname: '',
-      position: ''
-    })
-
-  };
-
-  ngOnInit(): void {
+      position: '',
+    });
   }
 
+  ngOnInit(): void {}
 }
