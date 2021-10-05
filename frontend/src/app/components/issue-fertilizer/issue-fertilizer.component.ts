@@ -45,6 +45,9 @@ export class IssueFertilizerComponent implements OnInit {
 
   xx: any;
 
+  getEachFertilizerInput: any = [];
+  getEachFertilizerInputQuantity = 0;
+
   constructor(
     private farmerService: FarmerService,
     private fertilizerService: FertilizerService,
@@ -63,6 +66,11 @@ export class IssueFertilizerComponent implements OnInit {
     });
 
     this.fertilizerProductNames = this.fertilizerNames;
+
+    // console.log('get each ferti input');
+    // console.log(this.getEachFertilizerInputQuantity);
+    // this.getEachFertilizerInput.push(this.getEachFertilizerInputQuantity);
+    // console.log(this.getEachFertilizerInput);
   }
 
   searchFarmer(inputnic: any) {
@@ -101,5 +109,7 @@ export class IssueFertilizerComponent implements OnInit {
     console.log('from generate bill');
     console.log(this.xx);
     this.isBillPreviewClicked = true;
+
+    console.log(this.getEachFertilizerInput);
   }
 }

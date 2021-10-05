@@ -75,7 +75,7 @@
               type="text"
               name="myinput"
               placeholder="Quantity"
-              [(ngModel)]="generateQuantityNames[i]"
+              [(ngModel)]="getEachFertilizerInput[i]"
               pInputText
               required
             />
@@ -109,23 +109,39 @@
               >
             </div>
             <div class="mb-1">
-              <label class="form-label"><strong>Farmer Name -</strong></label>
+              <label class="form-label"><strong>Farmer Name </strong></label>
               &nbsp;
               <label class="form-label"
                 ><strong>{{ firstname }} &nbsp;{{ secondname }}</strong></label
               >
             </div>
             <div class="mb-1">
-              <label class="form-label"><strong>Address - </strong></label>
+              <label class="form-label"><strong>Address </strong></label>
               &nbsp;
               <label class="form-label"
                 ><strong>{{ address }}</strong></label
               >
             </div>
             <div class="mb-1">
-              <label class="form-label"><strong>Items Bought - </strong></label>
+              <label class="form-label"
+                ><strong>
+                  <div
+                    *ngFor="let item of generateQuantityNames; let i = index"
+                  >
+                    {{ generateQuantityNames[i].name }}
+                  </div></strong
+                ></label
+              >
               &nbsp;
-              <label class="form-label"><strong>items goes here</strong></label>
+              <label class="form-label"
+                ><strong
+                  ><div
+                    *ngFor="let item of getEachFertilizerInput; let i = index"
+                  >
+                    {{ getEachFertilizerInput[i] }}
+                  </div></strong
+                ></label
+              >
             </div>
           </p-card>
         </ng-template>
