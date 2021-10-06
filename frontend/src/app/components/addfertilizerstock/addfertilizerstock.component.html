@@ -1,46 +1,48 @@
-<div class="container p-5">
-  <form [formGroup]="createForm" class="create-form">
-    <div class="mb-3">
-      <p-dropdown
-        [options]="fertilizerProductNames"
-        [style]="{ width: '20rem' }"
-        placeholder="Select Fertilizer"
-        optionLabel="name"
-        [showClear]="true"
-        #name
-      ></p-dropdown>
-    </div>
+<p-card>
+  <div class="container p-5">
+    <form [formGroup]="createForm" class="create-form">
+      <div class="mb-3">
+        <p-dropdown
+          [options]="fertilizerProductNames"
+          [style]="{ width: '20rem' }"
+          placeholder="Select Fertilizer"
+          optionLabel="name"
+          [showClear]="true"
+          #name
+        ></p-dropdown>
+      </div>
 
-    <div class="mb-3">
-      <p-dropdown
-        [options]="fertilizerTypes"
-        [style]="{ width: '20rem' }"
-        placeholder="Select Product Type"
-        optionLabel="name"
-        [showClear]="true"
-        #protype
-      ></p-dropdown>
-    </div>
+      <div class="mb-3">
+        <p-dropdown
+          [options]="fertilizerTypes"
+          [style]="{ width: '20rem' }"
+          placeholder="Select Product Type"
+          optionLabel="name"
+          [showClear]="true"
+          #protype
+        ></p-dropdown>
+      </div>
 
-    <div class="mb-3">
-      <input
-        type="text"
-        placeholder="Quantity (kg)"
-        pInputText
-        required
-        #quantity
-      />
-    </div>
+      <div class="mb-3">
+        <input
+          type="text"
+          placeholder="Quantity (kg)"
+          pInputText
+          required
+          #quantity
+        />
+      </div>
 
-    <button
-      pButton
-      type="submit"
-      label="Submit"
-      class="p-button-primary"
-      (click)="sendStockToDB(name.value, protype.value, quantity.value)"
-    ></button>
-  </form>
-</div>
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="p-button-raised p-button-help"
+        (click)="sendStockToDB(name.value, protype.value, quantity.value)"
+      ></button>
+    </form>
+  </div>
+</p-card>
 
 <p-dialog
   header="Confirmation"
@@ -56,7 +58,7 @@
       icon="pi pi-check"
       (click)="displayModal = false"
       label="Ok"
-      styleClass="p-button-text"
+      styleclass="p-button-raised p-button-help"
     ></p-button>
   </ng-template>
 </p-dialog>

@@ -1,126 +1,126 @@
-<div>
-  <div class="row" style="margin-top: 2rem">
-    <div class="col-md-12">
-      <span class="p-float-label">
-        <input id="float-input" type="text" pInputText #inputnic />
-        <label for="float-input">Search by NIC</label>
-      </span>
-    </div>
-  </div>
-  <div class="row" style="margin-top: 0.5rem">
-    <div class="col-md-12">
-      <button
-        pButton
-        type="submit"
-        label="Search"
-        class="p-button-success"
-        (click)="searchFarmer(inputnic.value)"
-      ></button>
-    </div>
-  </div>
-  <div *ngIf="showResults; then defaultDisplayBlock"></div>
-  <ng-template #defaultDisplayBlock>
-    <div style="margin-top: 0.5rem">
-      <div class="mb-3">
-        <label class="form-label">First Name</label><br />
-        <input
-          type="text"
-          placeholder="{{ firstname }}"
-          pInputText
-          required
-          readonly
-        />
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Second Name</label><br />
-        <input
-          type="text"
-          placeholder="{{ secondname }}"
-          pInputText
-          required
-          readonly
-        />
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Address</label><br />
-        <input
-          type="text"
-          placeholder="{{ address }}"
-          pInputText
-          required
-          readonly
-        />
+<p-card>
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <span class="p-float-label">
+          <input id="float-input" type="text" pInputText #inputnic />
+          <label for="float-input">Search by NIC</label>
+        </span>
       </div>
     </div>
-  </ng-template>
-
-  <div class="row" style="margin-top: 1rem">
-    <div class="col-md-12">
-      <p-multiSelect
-        [options]="fertilizerProductNames"
-        [style]="{ width: '20rem' }"
-        placeholder="Select the Fertilizer Type"
-        optionLabel="name"
-        #selectedItems
-      ></p-multiSelect>
-
-      <div class="col-md-12" style="margin-top: 1rem">
+    <div class="row" style="margin-top: 0.5rem">
+      <div class="col-md-12">
+        <button
+          pButton
+          type="submit"
+          label="Search"
+          class="p-button-raised p-button-help"
+          (click)="searchFarmer(inputnic.value)"
+        ></button>
+      </div>
+    </div>
+    <div *ngIf="showResults; then defaultDisplayBlock"></div>
+    <ng-template #defaultDisplayBlock>
+      <div style="margin-top: 0.5rem">
         <div class="mb-3">
-          <button
-            pButton
-            type="submit"
-            label="Next"
-            class="p-button-success"
-            (click)="handleNext(selectedItems.value)"
-          ></button>
+          <label class="form-label">First Name</label><br />
+          <input
+            type="text"
+            placeholder="{{ firstname }}"
+            pInputText
+            required
+            readonly
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Second Name</label><br />
+          <input
+            type="text"
+            placeholder="{{ secondname }}"
+            pInputText
+            required
+            readonly
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Address</label><br />
+          <input
+            type="text"
+            placeholder="{{ address }}"
+            pInputText
+            required
+            readonly
+          />
         </div>
       </div>
-    </div>
-  </div>
+    </ng-template>
 
-  <div *ngIf="isNextBtnClicked; then nextNgTemplate"></div>
-  <ng-template #nextNgTemplate>
-    <div style="margin-top: 0.5rem">
-      <div class="row">
-        <div class="col-md-12">
-          <div *ngFor="let item of generateQuantityNames; let i = index">
-            <br />
-            <label class="form-label">{{ item.name }}</label
-            ><br />
-            <input
-              type="text"
-              name="myinput"
-              placeholder="Quantity"
-              [(ngModel)]="getEachFertilizerInput[i]"
-              pInputText
-              required
-            />
+    <div class="row" style="margin-top: 1rem">
+      <div class="col-md-12">
+        <p-multiSelect
+          [options]="fertilizerProductNames"
+          [style]="{ width: '20rem' }"
+          placeholder="Select the Fertilizer Type"
+          optionLabel="name"
+          #selectedItems
+        ></p-multiSelect>
+
+        <div class="col-md-12" style="margin-top: 1rem">
+          <div class="mb-3">
+            <button
+              pButton
+              type="submit"
+              label="Next"
+              class="p-button-raised p-button-help"
+              (click)="handleNext(selectedItems.value)"
+            ></button>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mb-3" style="margin-top: 1rem">
-          <button
-            pButton
-            type="submit"
-            label="Generate Bill"
-            class="p-button-danger"
-            (click)="handleGenerateBill()"
-          ></button>
+    <div *ngIf="isNextBtnClicked; then nextNgTemplate"></div>
+    <ng-template #nextNgTemplate>
+      <div style="margin-top: 0.5rem">
+        <div class="row">
+          <div class="col-md-12">
+            <div *ngFor="let item of generateQuantityNames; let i = index">
+              <br />
+              <label class="form-label">{{ item.name }}</label
+              ><br />
+              <input
+                type="text"
+                name="myinput"
+                placeholder="Quantity"
+                [(ngModel)]="getEachFertilizerInput[i]"
+                pInputText
+                required
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="row" style="margin-top: 1rem">
-      <div class="col-md-12">
-        <div *ngIf="isBillPreviewClicked; then billPreviewNgTemplate"></div>
-        <ng-template #billPreviewNgTemplate>
-          <p-card>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mb-3" style="margin-top: 1rem">
+            <button
+              pButton
+              type="submit"
+              label="Generate Bill"
+              class="p-button-raised p-button-danger"
+              (click)="handleGenerateBill()"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 1rem">
+        <div class="col-md-12">
+          <div *ngIf="isBillPreviewClicked; then billPreviewNgTemplate"></div>
+          <ng-template #billPreviewNgTemplate>
             <div class="mb-0">
               <label class="form-label"
                 ><strong><h4>Bill Preview</h4></strong></label
@@ -161,10 +161,9 @@
                 ></label
               >
             </div>
-          </p-card>
-        </ng-template>
+          </ng-template>
 
-        <!-- <div class="mb-3" style="margin-top: 1rem">
+          <!-- <div class="mb-3" style="margin-top: 1rem">
           <button
             pButton
             type="submit"
@@ -173,7 +172,8 @@
             (click)="handleGenerateBill()"
           ></button>
         </div> -->
+        </div>
       </div>
-    </div>
-  </ng-template>
-</div>
+    </ng-template>
+  </div>
+</p-card>

@@ -1,44 +1,46 @@
-<div class="container p-5">
-  <form [formGroup]="createForm" class="create-form">
-    <div class="mb-3">
-      <label class="form-label">Product Name</label><br />
-      <input type="text" pInputText required #pname />
-    </div>
-    <div class="mb-3">
-      <p-dropdown
-        [options]="groupedCompanies"
-        [style]="{ width: '20rem' }"
-        placeholder="Select a Company"
-        [group]="true"
-        #comname
-      >
-        <ng-template let-group pTemplate="group">
-          <div class="p-d-flex p-ai-center">
-            <span>{{ group.label }}</span>
-          </div>
-        </ng-template>
-      </p-dropdown>
-    </div>
-    <div class="mb-3">
-      <p-dropdown
-        [options]="fertilizerTypes"
-        [style]="{ width: '20rem' }"
-        placeholder="Select the Type"
-        optionLabel="name"
-        [showClear]="true"
-        #protype
-      ></p-dropdown>
-    </div>
+<p-card>
+  <div class="container p-5">
+    <form [formGroup]="createForm" class="create-form">
+      <div class="mb-3">
+        <label class="form-label">Product Name</label><br />
+        <input type="text" pInputText required #pname />
+      </div>
+      <div class="mb-3">
+        <p-dropdown
+          [options]="groupedCompanies"
+          [style]="{ width: '20rem' }"
+          placeholder="Select a Company"
+          [group]="true"
+          #comname
+        >
+          <ng-template let-group pTemplate="group">
+            <div class="p-d-flex p-ai-center">
+              <span>{{ group.label }}</span>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="mb-3">
+        <p-dropdown
+          [options]="fertilizerTypes"
+          [style]="{ width: '20rem' }"
+          placeholder="Select the Type"
+          optionLabel="name"
+          [showClear]="true"
+          #protype
+        ></p-dropdown>
+      </div>
 
-    <button
-      pButton
-      type="submit"
-      label="Submit"
-      class="p-button-primary"
-      (click)="addFertilizer(pname.value, comname.value, protype.value)"
-    ></button>
-  </form>
-</div>
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="p-button-raised p-button-help"
+        (click)="addFertilizer(pname.value, comname.value, protype.value)"
+      ></button>
+    </form>
+  </div>
+</p-card>
 
 <p-dialog
   header="Confirmation"
@@ -54,7 +56,7 @@
       icon="pi pi-check"
       (click)="displayModal = false"
       label="Ok"
-      styleClass="p-button-text"
+      styleclass="p-button-raised p-button-help"
     ></p-button>
   </ng-template>
 </p-dialog>

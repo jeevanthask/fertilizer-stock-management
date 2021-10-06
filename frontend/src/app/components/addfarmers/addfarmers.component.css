@@ -5,3 +5,7 @@ input {
 button {
   width: 10rem;
 }
+
+.pcard {
+  background-color: aqua;
+}

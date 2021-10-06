@@ -1,57 +1,58 @@
-<div class="container p-5">
-  <form [formGroup]="updateForm" class="create-form">
-    <div class="mb-3">
-      <label class="form-label">First Name</label><br />
-      <input
-        type="text"
-        pInputText
-        required
-        value="{{ farmer.firstname }}"
-        #firstname
-      />
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Second Name</label><br />
-      <input
-        type="text"
-        pInputText
-        required
-        value="{{ farmer.secondname }}"
-        #secondname
-      />
-    </div>
-    <div class="mb-3">
-      <label class="form-label">NIC Number</label><br />
-      <input type="text" pInputText required value="{{ farmer.nic }}" #nic />
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Address</label><br />
-      <input
-        type="text"
-        pInputText
-        required
-        value="{{ farmer.address }}"
-        #address
-      />
-    </div>
+<p-card>
+  <div class="container p-5">
+    <form [formGroup]="updateForm" class="create-form">
+      <div class="mb-3">
+        <label class="form-label">First Name</label><br />
+        <input
+          type="text"
+          pInputText
+          required
+          value="{{ farmer.firstname }}"
+          #firstname
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Second Name</label><br />
+        <input
+          type="text"
+          pInputText
+          required
+          value="{{ farmer.secondname }}"
+          #secondname
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">NIC Number</label><br />
+        <input type="text" pInputText required value="{{ farmer.nic }}" #nic />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Address</label><br />
+        <input
+          type="text"
+          pInputText
+          required
+          value="{{ farmer.address }}"
+          #address
+        />
+      </div>
 
-    <button
-      pButton
-      type="submit"
-      label="Submit"
-      class="p-button-help"
-      (click)="
-        updateFarmer(
-          firstname.value,
-          secondname.value,
-          nic.value,
-          address.value
-        )
-      "
-    ></button>
-  </form>
-</div>
-
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        class="p-button-help"
+        (click)="
+          updateFarmer(
+            firstname.value,
+            secondname.value,
+            nic.value,
+            address.value
+          )
+        "
+      ></button>
+    </form>
+  </div>
+</p-card>
 <p-dialog
   header="Confirmation"
   [(visible)]="displayModal"
