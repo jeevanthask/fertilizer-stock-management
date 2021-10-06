@@ -12,6 +12,7 @@ export class UpdatecompanyComponent implements OnInit {
   @Input() companyId: any;
   updateForm: FormGroup;
   company: any = {};
+  displayModal: boolean = false;
 
   constructor(private companyService: CompanyService, private fb: FormBuilder) {
     this.updateForm = this.fb.group({
@@ -46,7 +47,7 @@ export class UpdatecompanyComponent implements OnInit {
         address
       )
       .subscribe(() => {
-        alert('The company updated successfully!!');
+        this.displayModal = true;
       });
 
     this.company.firstname = '';

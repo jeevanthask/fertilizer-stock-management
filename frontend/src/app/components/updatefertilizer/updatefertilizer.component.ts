@@ -20,6 +20,7 @@ export class UpdatefertilizerComponent implements OnInit {
 
   groupedCompanies: SelectItemGroup[];
   fertilizerTypes: FertilizerType[];
+  displayModal: boolean = false;
 
   constructor(
     private fertilizerService: FertilizerService,
@@ -78,7 +79,7 @@ export class UpdatefertilizerComponent implements OnInit {
     this.fertilizerService
       .updateFertilizer(this.fertilizerId, pname, comname, protype.name)
       .subscribe(() => {
-        alert('The fertilizer updated successfully!!');
+        this.displayModal = true;
       });
 
     this.fertilizer.name = '';
