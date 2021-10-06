@@ -12,6 +12,7 @@ export class UpdatefarmerComponent implements OnInit {
   farmer: any = {};
 
   updateForm: FormGroup;
+  displayModal: boolean = false;
 
   constructor(private farmerService: FarmerService, private fb: FormBuilder) {
     this.updateForm = this.fb.group({
@@ -32,7 +33,7 @@ export class UpdatefarmerComponent implements OnInit {
     this.farmerService
       .updateFarmer(this.farmerId, firstname, secondname, nic, address)
       .subscribe(() => {
-        alert('The farmer updated successfully!!');
+        this.displayModal = true;
       });
 
     this.farmer.firstname = '';
