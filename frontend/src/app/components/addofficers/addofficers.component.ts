@@ -25,9 +25,8 @@ export class AddofficersComponent implements OnInit {
     });
 
     this.officerTypes = [
-      { name: 'officertype01', code: 'NY' },
-      { name: 'officertype02', code: 'RM' },
-      { name: 'officertype03', code: 'EE' },
+      { name: 'Management Assistant', code: 'NY' },
+      { name: 'Development Officer', code: 'RM' },
     ];
   }
 

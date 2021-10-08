@@ -21,9 +21,8 @@ export class UpdateofficerComponent implements OnInit {
 
   constructor(private officerService: OfficerService, private fb: FormBuilder) {
     this.officerTypes = [
-      { name: 'officertype01', code: 'NY' },
-      { name: 'officertype02', code: 'RM' },
-      { name: 'officertype03', code: 'EE' },
+      { name: 'Management Assistant', code: 'NY' },
+      { name: 'Development Officer', code: 'RM' },
     ];
 
     this.updateForm = this.fb.group({
