@@ -1,3 +1,4 @@
+import { CompanyService } from './../../services/company.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FertilizerService } from '../../services/fertilizer.service';
@@ -19,10 +20,13 @@ export class AddfertilizersComponent implements OnInit {
   groupedCompanies: SelectItemGroup[];
   fertilizerTypes: FertilizerType[];
   displayModal: boolean = false;
+  fetchcompanies: any;
+  companyNames: any;
 
   constructor(
     private fertilizerService: FertilizerService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private companyService: CompanyService
   ) {
     this.createForm = this.fb.group({
       pname: ['', Validators.required],
@@ -34,6 +38,8 @@ export class AddfertilizersComponent implements OnInit {
       { name: 'Organic', code: 'NY' },
       { name: 'Inorganic', code: 'RM' },
     ];
+
+    this.fetchCompanies();
 
     this.groupedCompanies = [
       {
@@ -60,10 +66,6 @@ export class AddfertilizersComponent implements OnInit {
   }
 
   addFertilizer(pname: any, comname: any, protype: any) {
-    console.log(pname);
-    console.log(comname);
-    console.log(protype.name);
-
     this.fertilizerService
       .addFertilizer(pname, comname, protype.name)
       .subscribe(() => {
@@ -74,6 +76,13 @@ export class AddfertilizersComponent implements OnInit {
       pname: ['', Validators.required],
       comname: '',
       protype: '',
+    });
+  }
+
+  fetchCompanies() {
+    this.companyService.getCompanies().subscribe((data) => {
+      this.fetchcompanies = data;
+      console.log(this.fetchcompanies);
     });
   }
 
