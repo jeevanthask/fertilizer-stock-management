@@ -124,6 +124,7 @@ import { DialogModule } from 'primeng/dialog';
     InputNumberModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     FarmerService,

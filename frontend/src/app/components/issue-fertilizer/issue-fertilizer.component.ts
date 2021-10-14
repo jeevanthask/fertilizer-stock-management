@@ -20,6 +20,7 @@ interface FertilizerProductName {
   styleUrls: ['./issue-fertilizer.component.css'],
 })
 export class IssueFertilizerComponent implements OnInit {
+  displayModal: boolean = false;
   createForm: FormGroup;
   farmers: any = [];
   firstname: any;
@@ -111,5 +112,6 @@ export class IssueFertilizerComponent implements OnInit {
     this.isBillPreviewClicked = true;
 
     console.log(this.getEachFertilizerInput);
+    this.displayModal = true;
   }
 }
