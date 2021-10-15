@@ -37,6 +37,7 @@ export class IssueFertilizerComponent implements OnInit {
   officers: any = [];
   fertilizerNames: any = [];
   issueOfficerName: any;
+  datetimevalue: any = new Date();
 
   fertilizerProductTypes: any = [];
   fertilizerProductNames: FertilizerProductName[];

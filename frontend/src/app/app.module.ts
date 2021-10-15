@@ -62,6 +62,7 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { CaptchaModule } from 'primeng/captcha';
 import { DialogModule } from 'primeng/dialog';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { DialogModule } from 'primeng/dialog';
     FertilizerstocklistComponent,
   ],
   imports: [
+    CalendarModule,
     CaptchaModule,
     DialogModule,
     ConfirmDialogModule,

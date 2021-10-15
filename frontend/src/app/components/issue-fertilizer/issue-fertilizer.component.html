@@ -79,6 +79,18 @@
           />
         </div>
 
+        <div style="margin-top: 1rem">
+          <label for="lastname3" class="p-col-fixed" style="width: 100px"
+            >Date & Time</label
+          ><br />
+
+          <p-calendar
+            [(ngModel)]="datetimevalue"
+            [showTime]="true"
+            inputId="time"
+          ></p-calendar>
+        </div>
+
         <div class="col-md-12" style="margin-top: 1rem">
           <div class="mb-3">
             <button
@@ -144,27 +156,21 @@
 >
   <div>
     <div class="p-field p-grid">
-      <label for="firstname3" class="p-col-fixed" style="width: 100px"
-        >Farmer Name</label
-      >
+      <label for="firstname3" class="p-col-fixed">Farmer Name</label>
       <div class="p-col">
-        <label for="firstname3" class="p-col-fixed" style="width: 100px"
+        <label for="firstname3" class="p-col-fixed"
           >{{ firstname }} &nbsp;{{ secondname }}</label
         >
       </div>
     </div>
     <div class="p-field p-grid">
-      <label for="lastname3" class="p-col-fixed" style="width: 100px"
-        >Address</label
-      >
+      <label for="lastname3" class="p-col-fixed">Address</label>
       <div class="p-col">
-        <label for="firstname3" class="p-col-fixed" style="width: 100px">{{
-          address
-        }}</label>
+        <label for="firstname3" class="p-col-fixed">{{ address }}</label>
       </div>
     </div>
     <div class="p-field p-grid">
-      <label for="lastname3" class="p-col-fixed" style="width: 100px">
+      <label for="lastname3" class="p-col-fixed">
         <div class="mb-1">
           <label class="form-label">
             <div *ngFor="let item of generateQuantityNames; let i = index">
@@ -181,13 +187,17 @@
       </label>
     </div>
     <div class="p-field p-grid">
-      <label for="lastname3" class="p-col-fixed" style="width: 100px"
-        >Issued By</label
-      >
+      <label for="lastname3" class="p-col-fixed">Issued By</label>
       <div class="p-col">
-        <label for="firstname3" class="p-col-fixed" style="width: 100px">{{
+        <label for="firstname3" class="p-col-fixed">{{
           issueOfficerName
         }}</label>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="lastname3" class="p-col-fixed">Issued Date and Time</label>
+      <div class="p-col">
+        <label for="firstname3" class="p-col-fixed">{{ datetimevalue }}</label>
       </div>
     </div>
   </div>
