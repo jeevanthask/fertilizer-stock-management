@@ -1,3 +1,4 @@
+import { OfficerService } from 'src/app/services/officer.service';
 import { Component, OnInit } from '@angular/core';
 import { FarmerService } from 'src/app/services/farmer.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -33,7 +34,9 @@ export class IssueFertilizerComponent implements OnInit {
   selectedFertilizers: any = []; //array which conains the names of fertilizers user selected
   selectedFertilizersLength = 0;
   fertilizers: any = [];
+  officers: any = [];
   fertilizerNames: any = [];
+  issueOfficerName: any;
 
   fertilizerProductTypes: any = [];
   fertilizerProductNames: FertilizerProductName[];
@@ -67,11 +70,6 @@ export class IssueFertilizerComponent implements OnInit {
     });
 
     this.fertilizerProductNames = this.fertilizerNames;
-
-    // console.log('get each ferti input');
-    // console.log(this.getEachFertilizerInputQuantity);
-    // this.getEachFertilizerInput.push(this.getEachFertilizerInputQuantity);
-    // console.log(this.getEachFertilizerInput);
   }
 
   searchFarmer(inputnic: any) {
@@ -94,6 +92,8 @@ export class IssueFertilizerComponent implements OnInit {
   handleNext(selectedItems: any) {
     this.isNextBtnClicked = true;
     this.generateQuantityNames = selectedItems;
+
+    console.log(this.issueOfficerName);
   }
 
   ngOnInit() {
