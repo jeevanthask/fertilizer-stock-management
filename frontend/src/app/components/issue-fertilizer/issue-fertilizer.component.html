@@ -121,7 +121,20 @@
                 [(ngModel)]="getEachFertilizerInput[i]"
                 pInputText
                 required
+              />&nbsp;
+              <input
+                type="text"
+                name="myinput"
+                placeholder="Price per Unit (Rs/)"
+                [(ngModel)]="getEachFertilizerInputMoney[i]"
+                pInputText
+                required
               />
+              &nbsp;
+              <label class="form-label">Total : </label>&nbsp;
+              <label class="form-label">{{
+                getEachFertilizerInput[i] * getEachFertilizerInputMoney[i]
+              }}</label>
             </div>
           </div>
         </div>
@@ -209,6 +222,14 @@
       </label>
       <div class="p-col">
         <label for="firstname3" class="p-col-fixed">{{ datetimevalue }}</label>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="lastname3" class="p-col-fixed"
+        ><strong>Bill Total</strong>
+      </label>
+      <div class="p-col">
+        <label for="firstname3" class="p-col-fixed">{{ currentTotal }}</label>
       </div>
     </div>
   </div>

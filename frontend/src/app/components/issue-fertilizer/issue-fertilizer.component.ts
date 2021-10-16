@@ -51,7 +51,9 @@ export class IssueFertilizerComponent implements OnInit {
   xx: any;
 
   getEachFertilizerInput: any = [];
+  getEachFertilizerInputMoney: any = [];
   getEachFertilizerInputQuantity = 0;
+  currentTotal = 0;
 
   constructor(
     private farmerService: FarmerService,
@@ -108,11 +110,20 @@ export class IssueFertilizerComponent implements OnInit {
   }
 
   handleGenerateBill() {
-    console.log('from generate bill');
-    console.log(this.xx);
     this.isBillPreviewClicked = true;
 
-    console.log(this.getEachFertilizerInput);
     this.displayModal = true;
+
+    console.log('money units');
+    console.log(this.getEachFertilizerInputMoney);
+
+    for (let i = 0; i < this.getEachFertilizerInput.length; i++) {
+      this.currentTotal =
+        this.currentTotal +
+        this.getEachFertilizerInputMoney[i] * this.getEachFertilizerInput[i];
+    }
+
+    console.log('current total');
+    console.log(this.currentTotal);
   }
 }
