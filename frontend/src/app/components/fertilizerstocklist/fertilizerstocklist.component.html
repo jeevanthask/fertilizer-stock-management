@@ -1,1 +1,66 @@
-<p>fertilizerstocklist works!</p>
+<div
+  *ngIf="isUpdateStockClicked; then updateStockBlock; else stockListBlock"
+></div>
+
+<ng-template #updateStockBlock>
+  <!-- <button
+    (click)="handleBack()"
+    pButton
+    type="button"
+    label="Back To List"
+    class="p-button-info m-2"
+  ></button> -->
+  <!-- <app-updatefarmer stockId="{{ stockId }}"></app-updatefarmer> -->
+</ng-template>
+
+<ng-template #stockListBlock>
+  <p-table
+    [value]="stocks"
+    styleClass="p-datatable-striped"
+    [paginator]="true"
+    [rows]="5"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[5, 10, 15]"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Product Type</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.producttype }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>
+          <div class="row">
+            <div class="col-md-2 m-1">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-cog"
+                class="p-button-rounded p-button-secondary"
+                (click)="clickUpdateStock(product._id)"
+              ></button>
+            </div>
+            <div class="col-md-2 m-1">
+              <button
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-trash"
+                class="p-button-rounded p-button-danger"
+                (click)="deleteStock(product._id)"
+              ></button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</ng-template>
